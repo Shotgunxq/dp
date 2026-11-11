@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>sk.thesis</groupId>
+        <artifactId>legacy-test-benchmark</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>benchmark-modern</artifactId>
+    <name>Benchmark modern (B09, Java 21 features)</name>
+
+    <properties>
+        <maven.compiler.release>21</maven.compiler.release>
+        <maven.compiler.testRelease>21</maven.compiler.testRelease>
+        <suite.dir>src/test/java</suite.dir>
+    </properties>
+
+    <build>
+        <testSourceDirectory>${suite.dir}</testSourceDirectory>
+    </build>
+</project>

@@ -1,0 +1,8 @@
+tool=evosuite
+model=1.2.0
+seed=46
+budget_s=60
+evosuite_flags=no_runtime_dependency+no_replace_calls+filter_sandbox_tests
+generation_jdk=openjdk version 1.8.0_472
+gen_time_s=508.7
+failed_classes=0

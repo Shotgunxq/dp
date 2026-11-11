@@ -1,0 +1,3 @@
+[null] => EXCEPTION java.lang.IllegalArgumentException: line must not be null
+[""] => "benchmark-daily-<DATE>.txt | last line: <TIMESTAMP> "
+["order 42 shipped"] => "benchmark-daily-<DATE>.txt | last line: <TIMESTAMP> order 42 shipped"

@@ -1,0 +1,5 @@
+[-1.0] => EXCEPTION java.lang.IllegalArgumentException: price must not be negative
+[-0.01] => EXCEPTION java.lang.IllegalArgumentException: price must not be negative
+[0.0] => "<FULL OR HAPPY-HOUR PRICE>"
+[10.0] => "<FULL OR HAPPY-HOUR PRICE>"
+[99.99] => "<FULL OR HAPPY-HOUR PRICE>"

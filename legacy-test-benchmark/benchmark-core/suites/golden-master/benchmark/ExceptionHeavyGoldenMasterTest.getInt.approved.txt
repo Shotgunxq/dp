@@ -1,0 +1,28 @@
+["port", 0, 100] => "ConfigException(out of range: port, position=-1)"
+["port", 0, 65535] => 8080
+["port", 1, 100] => "ConfigException(out of range: port, position=-1)"
+["port", 1, 65535] => 8080
+["timeout", 0, 100] => 30
+["timeout", 0, 65535] => 30
+["timeout", 1, 100] => 30
+["timeout", 1, 65535] => 30
+["name", 0, 100] => "ConfigException(not a number: name, position=-1)"
+["name", 0, 65535] => "ConfigException(not a number: name, position=-1)"
+["name", 1, 100] => "ConfigException(not a number: name, position=-1)"
+["name", 1, 65535] => "ConfigException(not a number: name, position=-1)"
+["neg", 0, 100] => "ConfigException(out of range: neg, position=-1)"
+["neg", 0, 65535] => "ConfigException(out of range: neg, position=-1)"
+["neg", 1, 100] => "ConfigException(out of range: neg, position=-1)"
+["neg", 1, 65535] => "ConfigException(out of range: neg, position=-1)"
+["zero", 0, 100] => 0
+["zero", 0, 65535] => 0
+["zero", 1, 100] => "ConfigException(out of range: zero, position=-1)"
+["zero", 1, 65535] => "ConfigException(out of range: zero, position=-1)"
+["big", 0, 100] => "ConfigException(not a number: big, position=-1)"
+["big", 0, 65535] => "ConfigException(not a number: big, position=-1)"
+["big", 1, 100] => "ConfigException(not a number: big, position=-1)"
+["big", 1, 65535] => "ConfigException(not a number: big, position=-1)"
+["missing", 0, 100] => "ConfigException(missing key: missing, position=-1)"
+["missing", 0, 65535] => "ConfigException(missing key: missing, position=-1)"
+["missing", 1, 100] => "ConfigException(missing key: missing, position=-1)"
+["missing", 1, 65535] => "ConfigException(missing key: missing, position=-1)"

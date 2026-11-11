@@ -1,0 +1,67 @@
+* EvoSuite 1.2.0
+* Going to generate test cases for class: benchmark.InjectedService
+* Starting Client-0
+* Connecting to master process on port 9166
+* Analyzing classpath: 
+  - /Users/bence/Downloads/legacy-test-benchmark/benchmark-core/target/classes
+* Finished analyzing classpath
+* Generating tests for class benchmark.InjectedService
+* Test criteria:
+  - Line Coverage
+  - Branch Coverage
+  - Exception
+  - Mutation testing (weak)
+  - Method-Output Coverage
+  - Top-Level Method Coverage
+  - No-Exception Top-Level Method Coverage
+  - Context Branch Coverage
+* Total number of test goals for DYNAMOSA: 175
+* Using seed 46
+* Starting evolution
+* Initial Number of Goals in DynaMOSA = 12 / 175
+* Search finished after 61s and 3806 generations, 415013 statements, best individual has fitness: 168.0
+* Minimizing test suite
+* Going to analyze the coverage criteria
+* Coverage analysis for criterion LINE
+* Coverage of criterion LINE: 14%
+* Total number of goals: 21
+* Number of covered goals: 3
+* Coverage analysis for criterion BRANCH
+* Coverage of criterion BRANCH: 6%
+* Total number of goals: 16
+* Number of covered goals: 1
+* Coverage analysis for criterion EXCEPTION
+* Coverage of criterion EXCEPTION: 100%
+* Total number of goals: 1
+* Number of covered goals: 1
+* Coverage analysis for criterion WEAKMUTATION
+* Coverage of criterion WEAKMUTATION: 2%
+* Total number of goals: 115
+* Number of covered goals: 2
+* Coverage analysis for criterion OUTPUT
+* Coverage of criterion OUTPUT: 0%
+* Total number of goals: 3
+* Number of covered goals: 0
+* Coverage analysis for criterion METHOD
+* Coverage of criterion METHOD: 50%
+* Total number of goals: 2
+* Number of covered goals: 1
+* Coverage analysis for criterion METHODNOEXCEPTION
+* Coverage of criterion METHODNOEXCEPTION: 0%
+* Total number of goals: 2
+* Number of covered goals: 0
+* Coverage analysis for criterion CBRANCH
+* Coverage of criterion CBRANCH: 6%
+* Total number of goals: 16
+* Number of covered goals: 1
+* Generated 1 tests with total length 1
+* Resulting test suite's coverage: 16% (average coverage for all fitness functions)
+* Generating assertions
+* Resulting test suite's mutation score: 0%
+* Property NO_RUNTIME_DEPENDENCY is set to true - skipping JUnit compile check
+* WARNING: Not including the runtime dependencies is likely to lead to flaky tests!
+* Writing tests to file
+* Writing JUnit test case 'InjectedService_ESTest' to /Users/bence/Downloads/legacy-test-benchmark/benchmark-core/suites/evosuite
+* Done!
+
+* Computation finished

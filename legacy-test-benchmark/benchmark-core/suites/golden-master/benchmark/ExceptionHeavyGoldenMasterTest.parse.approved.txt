@@ -1,0 +1,13 @@
+[null] => EXCEPTION java.lang.IllegalArgumentException: text must not be null
+[""] => {}
+["   "] => {}
+["a=1"] => {a=1}
+["a=1;b=2"] => {a=1, b=2}
+[" a = 1 ; ; b=2 ;"] => {a=1, b=2}
+["a="] => {a=}
+["url=x=y"] => {url=x=y}
+["a=1;broken"] => "ConfigException(missing '=' in entry: broken, position=1)"
+["=5"] => "ConfigException(empty key, position=0)"
+["a=1;a=2"] => "ConfigException(duplicate key: a, position=1)"
+["a=1;;b"] => "ConfigException(missing '=' in entry: b, position=2)"
+["port=8080;host=localhost;debug=true"] => {port=8080, host=localhost, debug=true}

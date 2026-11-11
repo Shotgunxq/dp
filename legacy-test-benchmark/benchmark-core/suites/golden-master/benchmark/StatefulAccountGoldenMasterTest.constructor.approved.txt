@@ -1,0 +1,12 @@
+[null, -1] => EXCEPTION java.lang.IllegalArgumentException: owner required
+[null, 0] => EXCEPTION java.lang.IllegalArgumentException: owner required
+[null, 100] => EXCEPTION java.lang.IllegalArgumentException: owner required
+["", -1] => EXCEPTION java.lang.IllegalArgumentException: owner required
+["", 0] => EXCEPTION java.lang.IllegalArgumentException: owner required
+["", 100] => EXCEPTION java.lang.IllegalArgumentException: owner required
+["   ", -1] => EXCEPTION java.lang.IllegalArgumentException: owner required
+["   ", 0] => EXCEPTION java.lang.IllegalArgumentException: owner required
+["   ", 100] => EXCEPTION java.lang.IllegalArgumentException: owner required
+["Alice", -1] => EXCEPTION java.lang.IllegalArgumentException: overdraft limit must not be negative
+["Alice", 0] => "Alice OPEN 0"
+["Alice", 100] => "Alice OPEN 0"

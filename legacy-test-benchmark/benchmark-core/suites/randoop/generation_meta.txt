@@ -1,0 +1,8 @@
+tool=randoop
+model=4.3.4
+seed=46
+budget_s=60
+output_limit=500
+generation_java=openjdk version 25.0.2 2026-01-20 LTS
+gen_time_s=167.4
+failed_classes=0

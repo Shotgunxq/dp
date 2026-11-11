@@ -1,0 +1,1 @@
+EXCEPTION java.io.UncheckedIOException: price database unavailable: /does/not/exist/prices.csv

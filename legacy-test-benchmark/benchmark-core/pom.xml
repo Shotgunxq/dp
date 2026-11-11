@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>sk.thesis</groupId>
+        <artifactId>legacy-test-benchmark</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>benchmark-core</artifactId>
+    <name>Benchmark core (B01-B08, Java 8 bytecode)</name>
+
+    <properties>
+        <!-- Java 8 bytecode: the SAME class files can be used by EvoSuite (JDK 8),
+             Kex/UnitTestBot (JDK 17), Randoop (JDK 21+) and JaCoCo/PIT (JDK 25). -->
+        <maven.compiler.release>8</maven.compiler.release>
+
+        <!-- Which test suite to build and measure. Default = hand-written reference suite.
+             Example: mvn verify -Dsuite.dir=suites/randoop -->
+        <suite.dir>src/test/java</suite.dir>
+    </properties>
+
+    <build>
+        <testSourceDirectory>${suite.dir}</testSourceDirectory>
+    </build>
+</project>

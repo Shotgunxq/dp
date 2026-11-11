@@ -1,0 +1,4 @@
+[false, false] => EXCEPTION java.lang.IllegalArgumentException: dependencies must not be null
+[false, true] => EXCEPTION java.lang.IllegalArgumentException: dependencies must not be null
+[true, false] => EXCEPTION java.lang.IllegalArgumentException: dependencies must not be null
+[true, true] => true
