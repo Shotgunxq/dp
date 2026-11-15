@@ -1,9 +1,0 @@
-class,seconds
-benchmark.BranchyValidator,7.08
-benchmark.ExceptionHeavy,7.45
-benchmark.HardWiredService,60.71
-benchmark.InjectedService,60.66
-benchmark.NestedRules,6.89
-benchmark.PureCalculator,6.27
-benchmark.StatefulAccount,7.67
-benchmark.TimeAndRandom,9.96

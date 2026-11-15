@@ -25,6 +25,7 @@
         <junit4.version>4.13.2</junit4.version>
         <mockito.version>5.22.0</mockito.version>
         <approvaltests.version>31.0.0</approvaltests.version>
+        <h2.version>2.3.232</h2.version>
         <jacoco.version>0.8.14</jacoco.version>
         <pitest.version>1.25.8</pitest.version>
         <pitest.junit5.version>1.2.3</pitest.junit5.version>
@@ -33,6 +34,8 @@
         <!-- golden master (B1): approve mode is only switched on by scripts/approve_golden_master.sh -->
         <golden.approve>false</golden.approve>
         <golden.dir></golden.dir>
+        <!-- a generated test that hangs is stopped after this many seconds -->
+        <surefire.fork.timeout>900</surefire.fork.timeout>
     </properties>
 
     <dependencyManagement>
@@ -71,6 +74,14 @@
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
             <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- H2 in-memory database: test database for the JDBC class (B15). Test scope only: the
+             class under test knows nothing about it and still uses DriverManager with a URL. -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>${h2.version}</version>
             <scope>test</scope>
         </dependency>
         <!-- ApprovalTests: golden master baseline (B1) -->
@@ -117,6 +128,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
+                    <forkedProcessTimeoutInSeconds>${surefire.fork.timeout}</forkedProcessTimeoutInSeconds>
                     <systemPropertyVariables>
                         <golden.approve>${golden.approve}</golden.approve>
                         <golden.dir>${golden.dir}</golden.dir>

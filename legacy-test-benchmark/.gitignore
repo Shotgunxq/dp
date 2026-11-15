@@ -1,3 +1,1 @@
-results/
-target/
-tools/
+# all rules are in the .gitignore of the dp folder (one level up)

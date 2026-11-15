@@ -1,0 +1,3000 @@
+["B2C", "SK", "Widget,2,10.00", false, false] => "
+INVOICE B2C/SK
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=3,90 tax=5,50 TOTAL=29,40"
+["B2C", "SK", "Widget,2,10.00", false, true] => "
+INVOICE B2C/SK
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=3,90 tax=5,50 TOTAL=29,50"
+["B2C", "SK", "Widget,2,10.00", true, false] => "
+INVOICE B2C/SK
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=3,90 tax=5,50 TOTAL=29,40"
+["B2C", "SK", "Widget,2,10.00", true, true] => "
+INVOICE B2C/SK
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=3,90 tax=5,50 TOTAL=29,50"
+["B2C", "SK", "Widget,2,10.00;Gadget,12,9.50", false, false] => "
+INVOICE B2C/SK
+  Widget x2 = 20,00
+  Gadget x12 = 114,00
+items=14 net=134,00 shipping=0,00 tax=30,82 TOTAL=164,82"
+["B2C", "SK", "Widget,2,10.00;Gadget,12,9.50", false, true] => "
+INVOICE B2C/SK
+  Widget x2 = 20,00
+  Gadget x12 = 114,00
+items=14 net=134,00 shipping=0,00 tax=30,82 TOTAL=165,00"
+["B2C", "SK", "Widget,2,10.00;Gadget,12,9.50", true, false] => "
+INVOICE B2C/SK
+  Widget x2 = 20,00
+  Gadget x12 = 108,30
+items=14 net=128,30 shipping=0,00 tax=29,51 TOTAL=157,81"
+["B2C", "SK", "Widget,2,10.00;Gadget,12,9.50", true, true] => "
+INVOICE B2C/SK
+  Widget x2 = 20,00
+  Gadget x12 = 108,30
+items=14 net=128,30 shipping=0,00 tax=29,51 TOTAL=158,00"
+["B2C", "SK", "Server,1,900.00,25", false, false] => "
+INVOICE B2C/SK
+  Server x1 = 900,00
+items=1 net=900,00 shipping=29,90 tax=213,88 TOTAL=1143,78"
+["B2C", "SK", "Server,1,900.00,25", false, true] => "
+INVOICE B2C/SK
+  Server x1 = 900,00
+items=1 net=900,00 shipping=29,90 tax=213,88 TOTAL=1144,00"
+["B2C", "SK", "Server,1,900.00,25", true, false] => "
+INVOICE B2C/SK
+  Server x1 = 900,00
+items=1 net=900,00 shipping=29,90 tax=213,88 TOTAL=1143,78"
+["B2C", "SK", "Server,1,900.00,25", true, true] => "
+INVOICE B2C/SK
+  Server x1 = 900,00
+items=1 net=900,00 shipping=29,90 tax=213,88 TOTAL=1144,00"
+["B2C", "SK", "Bolt,100,12.00", false, false] => "
+INVOICE B2C/SK
+  Bolt x100 = 1200,00
+items=100 net=1200,00 shipping=0,00 tax=276,00 TOTAL=1476,00"
+["B2C", "SK", "Bolt,100,12.00", false, true] => "
+INVOICE B2C/SK
+  Bolt x100 = 1200,00
+items=100 net=1200,00 shipping=0,00 tax=276,00 TOTAL=1476,00"
+["B2C", "SK", "Bolt,100,12.00", true, false] => "
+INVOICE B2C/SK
+  Bolt x100 = 1140,00
+items=100 net=1140,00 discount=15,00 shipping=0,00 tax=258,75 TOTAL=1383,75"
+["B2C", "SK", "Bolt,100,12.00", true, true] => "
+INVOICE B2C/SK
+  Bolt x100 = 1140,00
+items=100 net=1140,00 discount=15,00 shipping=0,00 tax=258,75 TOTAL=1384,00"
+["B2C", "SK", "Pin,60,1.00", false, false] => "
+INVOICE B2C/SK
+  Pin x60 = 60,00
+items=60 net=60,00 shipping=3,90 tax=14,70 TOTAL=78,60"
+["B2C", "SK", "Pin,60,1.00", false, true] => "
+INVOICE B2C/SK
+  Pin x60 = 60,00
+items=60 net=60,00 shipping=3,90 tax=14,70 TOTAL=78,50"
+["B2C", "SK", "Pin,60,1.00", true, false] => "
+INVOICE B2C/SK
+  Pin x60 = 57,00
+items=60 net=57,00 discount=15,00 shipping=3,90 tax=10,56 TOTAL=56,46"
+["B2C", "SK", "Pin,60,1.00", true, true] => "
+INVOICE B2C/SK
+  Pin x60 = 57,00
+items=60 net=57,00 discount=15,00 shipping=3,90 tax=10,56 TOTAL=56,50"
+["B2C", "SK", "Thing,1,20000", false, false] => "
+INVOICE B2C/SK
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=4600,00 TOTAL=24600,00 [REVIEW]"
+["B2C", "SK", "Thing,1,20000", false, true] => "
+INVOICE B2C/SK
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=4600,00 TOTAL=24600,00 [REVIEW]"
+["B2C", "SK", "Thing,1,20000", true, false] => "
+INVOICE B2C/SK
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=4600,00 TOTAL=24600,00 [REVIEW]"
+["B2C", "SK", "Thing,1,20000", true, true] => "
+INVOICE B2C/SK
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=4600,00 TOTAL=24600,00 [REVIEW]"
+["B2C", "SK", "x,1,5;bad;y,abc,1;z,0,1,0", false, false] => "
+INVOICE B2C/SK
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=3,90 tax=2,05 TOTAL=10,95"
+["B2C", "SK", "x,1,5;bad;y,abc,1;z,0,1,0", false, true] => "
+INVOICE B2C/SK
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=3,90 tax=2,05 TOTAL=11,00"
+["B2C", "SK", "x,1,5;bad;y,abc,1;z,0,1,0", true, false] => "
+INVOICE B2C/SK
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=3,90 tax=2,05 TOTAL=10,95"
+["B2C", "SK", "x,1,5;bad;y,abc,1;z,0,1,0", true, true] => "
+INVOICE B2C/SK
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=3,90 tax=2,05 TOTAL=11,00"
+["B2C", "SK", "", false, false] => "
+ERROR: no lines"
+["B2C", "SK", "", false, true] => "
+ERROR: no lines"
+["B2C", "SK", "", true, false] => "
+ERROR: no lines"
+["B2C", "SK", "", true, true] => "
+ERROR: no lines"
+["B2C", "DE", "Widget,2,10.00", false, false] => "
+INVOICE B2C/DE
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=9,90 tax=5,68 TOTAL=35,58"
+["B2C", "DE", "Widget,2,10.00", false, true] => "
+INVOICE B2C/DE
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=9,90 tax=5,68 TOTAL=35,50"
+["B2C", "DE", "Widget,2,10.00", true, false] => "
+INVOICE B2C/DE
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=9,90 tax=5,68 TOTAL=35,58"
+["B2C", "DE", "Widget,2,10.00", true, true] => "
+INVOICE B2C/DE
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=9,90 tax=5,68 TOTAL=35,50"
+["B2C", "DE", "Widget,2,10.00;Gadget,12,9.50", false, false] => "
+INVOICE B2C/DE
+  Widget x2 = 20,00
+  Gadget x12 = 114,00
+items=14 net=134,00 shipping=0,00 tax=25,46 TOTAL=159,46"
+["B2C", "DE", "Widget,2,10.00;Gadget,12,9.50", false, true] => "
+INVOICE B2C/DE
+  Widget x2 = 20,00
+  Gadget x12 = 114,00
+items=14 net=134,00 shipping=0,00 tax=25,46 TOTAL=159,50"
+["B2C", "DE", "Widget,2,10.00;Gadget,12,9.50", true, false] => "
+INVOICE B2C/DE
+  Widget x2 = 20,00
+  Gadget x12 = 108,30
+items=14 net=128,30 shipping=0,00 tax=24,38 TOTAL=152,68"
+["B2C", "DE", "Widget,2,10.00;Gadget,12,9.50", true, true] => "
+INVOICE B2C/DE
+  Widget x2 = 20,00
+  Gadget x12 = 108,30
+items=14 net=128,30 shipping=0,00 tax=24,38 TOTAL=152,50"
+["B2C", "DE", "Server,1,900.00,25", false, false] => "
+INVOICE B2C/DE
+  Server x1 = 900,00
+items=1 net=900,00 shipping=29,90 tax=176,68 TOTAL=1106,58"
+["B2C", "DE", "Server,1,900.00,25", false, true] => "
+INVOICE B2C/DE
+  Server x1 = 900,00
+items=1 net=900,00 shipping=29,90 tax=176,68 TOTAL=1106,50"
+["B2C", "DE", "Server,1,900.00,25", true, false] => "
+INVOICE B2C/DE
+  Server x1 = 900,00
+items=1 net=900,00 shipping=29,90 tax=176,68 TOTAL=1106,58"
+["B2C", "DE", "Server,1,900.00,25", true, true] => "
+INVOICE B2C/DE
+  Server x1 = 900,00
+items=1 net=900,00 shipping=29,90 tax=176,68 TOTAL=1106,50"
+["B2C", "DE", "Bolt,100,12.00", false, false] => "
+INVOICE B2C/DE
+  Bolt x100 = 1200,00
+items=100 net=1200,00 shipping=0,00 tax=228,00 TOTAL=1428,00"
+["B2C", "DE", "Bolt,100,12.00", false, true] => "
+INVOICE B2C/DE
+  Bolt x100 = 1200,00
+items=100 net=1200,00 shipping=0,00 tax=228,00 TOTAL=1428,00"
+["B2C", "DE", "Bolt,100,12.00", true, false] => "
+INVOICE B2C/DE
+  Bolt x100 = 1140,00
+items=100 net=1140,00 discount=15,00 shipping=0,00 tax=213,75 TOTAL=1338,75"
+["B2C", "DE", "Bolt,100,12.00", true, true] => "
+INVOICE B2C/DE
+  Bolt x100 = 1140,00
+items=100 net=1140,00 discount=15,00 shipping=0,00 tax=213,75 TOTAL=1339,00"
+["B2C", "DE", "Pin,60,1.00", false, false] => "
+INVOICE B2C/DE
+  Pin x60 = 60,00
+items=60 net=60,00 shipping=9,90 tax=13,28 TOTAL=83,18"
+["B2C", "DE", "Pin,60,1.00", false, true] => "
+INVOICE B2C/DE
+  Pin x60 = 60,00
+items=60 net=60,00 shipping=9,90 tax=13,28 TOTAL=83,00"
+["B2C", "DE", "Pin,60,1.00", true, false] => "
+INVOICE B2C/DE
+  Pin x60 = 57,00
+items=60 net=57,00 discount=15,00 shipping=9,90 tax=9,86 TOTAL=61,76"
+["B2C", "DE", "Pin,60,1.00", true, true] => "
+INVOICE B2C/DE
+  Pin x60 = 57,00
+items=60 net=57,00 discount=15,00 shipping=9,90 tax=9,86 TOTAL=62,00"
+["B2C", "DE", "Thing,1,20000", false, false] => "
+INVOICE B2C/DE
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=3800,00 TOTAL=23800,00 [REVIEW]"
+["B2C", "DE", "Thing,1,20000", false, true] => "
+INVOICE B2C/DE
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=3800,00 TOTAL=23800,00 [REVIEW]"
+["B2C", "DE", "Thing,1,20000", true, false] => "
+INVOICE B2C/DE
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=3800,00 TOTAL=23800,00 [REVIEW]"
+["B2C", "DE", "Thing,1,20000", true, true] => "
+INVOICE B2C/DE
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=3800,00 TOTAL=23800,00 [REVIEW]"
+["B2C", "DE", "x,1,5;bad;y,abc,1;z,0,1,0", false, false] => "
+INVOICE B2C/DE
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=9,90 tax=2,83 TOTAL=17,73"
+["B2C", "DE", "x,1,5;bad;y,abc,1;z,0,1,0", false, true] => "
+INVOICE B2C/DE
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=9,90 tax=2,83 TOTAL=17,50"
+["B2C", "DE", "x,1,5;bad;y,abc,1;z,0,1,0", true, false] => "
+INVOICE B2C/DE
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=9,90 tax=2,83 TOTAL=17,73"
+["B2C", "DE", "x,1,5;bad;y,abc,1;z,0,1,0", true, true] => "
+INVOICE B2C/DE
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=9,90 tax=2,83 TOTAL=17,50"
+["B2C", "DE", "", false, false] => "
+ERROR: no lines"
+["B2C", "DE", "", false, true] => "
+ERROR: no lines"
+["B2C", "DE", "", true, false] => "
+ERROR: no lines"
+["B2C", "DE", "", true, true] => "
+ERROR: no lines"
+["B2C", "HU", "Widget,2,10.00", false, false] => "
+INVOICE B2C/HU
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=9,90 tax=8,07 TOTAL=37,97"
+["B2C", "HU", "Widget,2,10.00", false, true] => "
+INVOICE B2C/HU
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=9,90 tax=8,07 TOTAL=38,00"
+["B2C", "HU", "Widget,2,10.00", true, false] => "
+INVOICE B2C/HU
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=9,90 tax=8,07 TOTAL=37,97"
+["B2C", "HU", "Widget,2,10.00", true, true] => "
+INVOICE B2C/HU
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=9,90 tax=8,07 TOTAL=38,00"
+["B2C", "HU", "Widget,2,10.00;Gadget,12,9.50", false, false] => "
+INVOICE B2C/HU
+  Widget x2 = 20,00
+  Gadget x12 = 114,00
+items=14 net=134,00 shipping=0,00 tax=36,18 TOTAL=170,18"
+["B2C", "HU", "Widget,2,10.00;Gadget,12,9.50", false, true] => "
+INVOICE B2C/HU
+  Widget x2 = 20,00
+  Gadget x12 = 114,00
+items=14 net=134,00 shipping=0,00 tax=36,18 TOTAL=170,00"
+["B2C", "HU", "Widget,2,10.00;Gadget,12,9.50", true, false] => "
+INVOICE B2C/HU
+  Widget x2 = 20,00
+  Gadget x12 = 108,30
+items=14 net=128,30 shipping=0,00 tax=34,64 TOTAL=162,94"
+["B2C", "HU", "Widget,2,10.00;Gadget,12,9.50", true, true] => "
+INVOICE B2C/HU
+  Widget x2 = 20,00
+  Gadget x12 = 108,30
+items=14 net=128,30 shipping=0,00 tax=34,64 TOTAL=163,00"
+["B2C", "HU", "Server,1,900.00,25", false, false] => "
+INVOICE B2C/HU
+  Server x1 = 900,00
+items=1 net=900,00 shipping=29,90 tax=251,07 TOTAL=1180,97"
+["B2C", "HU", "Server,1,900.00,25", false, true] => "
+INVOICE B2C/HU
+  Server x1 = 900,00
+items=1 net=900,00 shipping=29,90 tax=251,07 TOTAL=1181,00"
+["B2C", "HU", "Server,1,900.00,25", true, false] => "
+INVOICE B2C/HU
+  Server x1 = 900,00
+items=1 net=900,00 shipping=29,90 tax=251,07 TOTAL=1180,97"
+["B2C", "HU", "Server,1,900.00,25", true, true] => "
+INVOICE B2C/HU
+  Server x1 = 900,00
+items=1 net=900,00 shipping=29,90 tax=251,07 TOTAL=1181,00"
+["B2C", "HU", "Bolt,100,12.00", false, false] => "
+INVOICE B2C/HU
+  Bolt x100 = 1200,00
+items=100 net=1200,00 shipping=0,00 tax=324,00 TOTAL=1524,00"
+["B2C", "HU", "Bolt,100,12.00", false, true] => "
+INVOICE B2C/HU
+  Bolt x100 = 1200,00
+items=100 net=1200,00 shipping=0,00 tax=324,00 TOTAL=1524,00"
+["B2C", "HU", "Bolt,100,12.00", true, false] => "
+INVOICE B2C/HU
+  Bolt x100 = 1140,00
+items=100 net=1140,00 discount=15,00 shipping=0,00 tax=303,75 TOTAL=1428,75"
+["B2C", "HU", "Bolt,100,12.00", true, true] => "
+INVOICE B2C/HU
+  Bolt x100 = 1140,00
+items=100 net=1140,00 discount=15,00 shipping=0,00 tax=303,75 TOTAL=1429,00"
+["B2C", "HU", "Pin,60,1.00", false, false] => "
+INVOICE B2C/HU
+  Pin x60 = 60,00
+items=60 net=60,00 shipping=9,90 tax=18,87 TOTAL=88,77"
+["B2C", "HU", "Pin,60,1.00", false, true] => "
+INVOICE B2C/HU
+  Pin x60 = 60,00
+items=60 net=60,00 shipping=9,90 tax=18,87 TOTAL=89,00"
+["B2C", "HU", "Pin,60,1.00", true, false] => "
+INVOICE B2C/HU
+  Pin x60 = 57,00
+items=60 net=57,00 discount=15,00 shipping=9,90 tax=14,01 TOTAL=65,91"
+["B2C", "HU", "Pin,60,1.00", true, true] => "
+INVOICE B2C/HU
+  Pin x60 = 57,00
+items=60 net=57,00 discount=15,00 shipping=9,90 tax=14,01 TOTAL=66,00"
+["B2C", "HU", "Thing,1,20000", false, false] => "
+INVOICE B2C/HU
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=5400,00 TOTAL=25400,00 [REVIEW]"
+["B2C", "HU", "Thing,1,20000", false, true] => "
+INVOICE B2C/HU
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=5400,00 TOTAL=25400,00 [REVIEW]"
+["B2C", "HU", "Thing,1,20000", true, false] => "
+INVOICE B2C/HU
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=5400,00 TOTAL=25400,00 [REVIEW]"
+["B2C", "HU", "Thing,1,20000", true, true] => "
+INVOICE B2C/HU
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=5400,00 TOTAL=25400,00 [REVIEW]"
+["B2C", "HU", "x,1,5;bad;y,abc,1;z,0,1,0", false, false] => "
+INVOICE B2C/HU
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=9,90 tax=4,02 TOTAL=18,92"
+["B2C", "HU", "x,1,5;bad;y,abc,1;z,0,1,0", false, true] => "
+INVOICE B2C/HU
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=9,90 tax=4,02 TOTAL=19,00"
+["B2C", "HU", "x,1,5;bad;y,abc,1;z,0,1,0", true, false] => "
+INVOICE B2C/HU
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=9,90 tax=4,02 TOTAL=18,92"
+["B2C", "HU", "x,1,5;bad;y,abc,1;z,0,1,0", true, true] => "
+INVOICE B2C/HU
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=9,90 tax=4,02 TOTAL=19,00"
+["B2C", "HU", "", false, false] => "
+ERROR: no lines"
+["B2C", "HU", "", false, true] => "
+ERROR: no lines"
+["B2C", "HU", "", true, false] => "
+ERROR: no lines"
+["B2C", "HU", "", true, true] => "
+ERROR: no lines"
+["B2C", "CH", "Widget,2,10.00", false, false] => "
+INVOICE B2C/CH
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=9,90 tax=2,42 TOTAL=32,32"
+["B2C", "CH", "Widget,2,10.00", false, true] => "
+INVOICE B2C/CH
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=9,90 tax=2,42 TOTAL=32,50"
+["B2C", "CH", "Widget,2,10.00", true, false] => "
+INVOICE B2C/CH
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=9,90 tax=2,42 TOTAL=32,32"
+["B2C", "CH", "Widget,2,10.00", true, true] => "
+INVOICE B2C/CH
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=9,90 tax=2,42 TOTAL=32,50"
+["B2C", "CH", "Widget,2,10.00;Gadget,12,9.50", false, false] => "
+INVOICE B2C/CH
+  Widget x2 = 20,00
+  Gadget x12 = 114,00
+items=14 net=134,00 shipping=0,00 tax=10,85 TOTAL=144,85"
+["B2C", "CH", "Widget,2,10.00;Gadget,12,9.50", false, true] => "
+INVOICE B2C/CH
+  Widget x2 = 20,00
+  Gadget x12 = 114,00
+items=14 net=134,00 shipping=0,00 tax=10,85 TOTAL=145,00"
+["B2C", "CH", "Widget,2,10.00;Gadget,12,9.50", true, false] => "
+INVOICE B2C/CH
+  Widget x2 = 20,00
+  Gadget x12 = 108,30
+items=14 net=128,30 shipping=0,00 tax=10,39 TOTAL=138,69"
+["B2C", "CH", "Widget,2,10.00;Gadget,12,9.50", true, true] => "
+INVOICE B2C/CH
+  Widget x2 = 20,00
+  Gadget x12 = 108,30
+items=14 net=128,30 shipping=0,00 tax=10,39 TOTAL=138,50"
+["B2C", "CH", "Server,1,900.00,25", false, false] => "
+INVOICE B2C/CH
+  Server x1 = 900,00
+items=1 net=900,00 shipping=29,90 tax=75,32 TOTAL=1005,22"
+["B2C", "CH", "Server,1,900.00,25", false, true] => "
+INVOICE B2C/CH
+  Server x1 = 900,00
+items=1 net=900,00 shipping=29,90 tax=75,32 TOTAL=1005,00"
+["B2C", "CH", "Server,1,900.00,25", true, false] => "
+INVOICE B2C/CH
+  Server x1 = 900,00
+items=1 net=900,00 shipping=29,90 tax=75,32 TOTAL=1005,22"
+["B2C", "CH", "Server,1,900.00,25", true, true] => "
+INVOICE B2C/CH
+  Server x1 = 900,00
+items=1 net=900,00 shipping=29,90 tax=75,32 TOTAL=1005,00"
+["B2C", "CH", "Bolt,100,12.00", false, false] => "
+INVOICE B2C/CH
+  Bolt x100 = 1200,00
+items=100 net=1200,00 shipping=0,00 tax=97,20 TOTAL=1297,20"
+["B2C", "CH", "Bolt,100,12.00", false, true] => "
+INVOICE B2C/CH
+  Bolt x100 = 1200,00
+items=100 net=1200,00 shipping=0,00 tax=97,20 TOTAL=1297,00"
+["B2C", "CH", "Bolt,100,12.00", true, false] => "
+INVOICE B2C/CH
+  Bolt x100 = 1140,00
+items=100 net=1140,00 discount=15,00 shipping=0,00 tax=91,13 TOTAL=1216,13"
+["B2C", "CH", "Bolt,100,12.00", true, true] => "
+INVOICE B2C/CH
+  Bolt x100 = 1140,00
+items=100 net=1140,00 discount=15,00 shipping=0,00 tax=91,13 TOTAL=1216,00"
+["B2C", "CH", "Pin,60,1.00", false, false] => "
+INVOICE B2C/CH
+  Pin x60 = 60,00
+items=60 net=60,00 shipping=9,90 tax=5,66 TOTAL=75,56"
+["B2C", "CH", "Pin,60,1.00", false, true] => "
+INVOICE B2C/CH
+  Pin x60 = 60,00
+items=60 net=60,00 shipping=9,90 tax=5,66 TOTAL=75,50"
+["B2C", "CH", "Pin,60,1.00", true, false] => "
+INVOICE B2C/CH
+  Pin x60 = 57,00
+items=60 net=57,00 discount=15,00 shipping=9,90 tax=4,20 TOTAL=56,10"
+["B2C", "CH", "Pin,60,1.00", true, true] => "
+INVOICE B2C/CH
+  Pin x60 = 57,00
+items=60 net=57,00 discount=15,00 shipping=9,90 tax=4,20 TOTAL=56,00"
+["B2C", "CH", "Thing,1,20000", false, false] => "
+INVOICE B2C/CH
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=1620,00 TOTAL=21620,00 [REVIEW]"
+["B2C", "CH", "Thing,1,20000", false, true] => "
+INVOICE B2C/CH
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=1620,00 TOTAL=21620,00 [REVIEW]"
+["B2C", "CH", "Thing,1,20000", true, false] => "
+INVOICE B2C/CH
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=1620,00 TOTAL=21620,00 [REVIEW]"
+["B2C", "CH", "Thing,1,20000", true, true] => "
+INVOICE B2C/CH
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=1620,00 TOTAL=21620,00 [REVIEW]"
+["B2C", "CH", "x,1,5;bad;y,abc,1;z,0,1,0", false, false] => "
+INVOICE B2C/CH
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=9,90 tax=1,21 TOTAL=16,11"
+["B2C", "CH", "x,1,5;bad;y,abc,1;z,0,1,0", false, true] => "
+INVOICE B2C/CH
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=9,90 tax=1,21 TOTAL=16,00"
+["B2C", "CH", "x,1,5;bad;y,abc,1;z,0,1,0", true, false] => "
+INVOICE B2C/CH
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=9,90 tax=1,21 TOTAL=16,11"
+["B2C", "CH", "x,1,5;bad;y,abc,1;z,0,1,0", true, true] => "
+INVOICE B2C/CH
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=9,90 tax=1,21 TOTAL=16,00"
+["B2C", "CH", "", false, false] => "
+ERROR: no lines"
+["B2C", "CH", "", false, true] => "
+ERROR: no lines"
+["B2C", "CH", "", true, false] => "
+ERROR: no lines"
+["B2C", "CH", "", true, true] => "
+ERROR: no lines"
+["B2C", "FR", "Widget,2,10.00", false, false] => "
+INVOICE B2C/FR
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=9,90 tax=5,98 TOTAL=35,88"
+["B2C", "FR", "Widget,2,10.00", false, true] => "
+INVOICE B2C/FR
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=9,90 tax=5,98 TOTAL=36,00"
+["B2C", "FR", "Widget,2,10.00", true, false] => "
+INVOICE B2C/FR
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=9,90 tax=5,98 TOTAL=35,88"
+["B2C", "FR", "Widget,2,10.00", true, true] => "
+INVOICE B2C/FR
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=9,90 tax=5,98 TOTAL=36,00"
+["B2C", "FR", "Widget,2,10.00;Gadget,12,9.50", false, false] => "
+INVOICE B2C/FR
+  Widget x2 = 20,00
+  Gadget x12 = 114,00
+items=14 net=134,00 shipping=0,00 tax=26,80 TOTAL=160,80"
+["B2C", "FR", "Widget,2,10.00;Gadget,12,9.50", false, true] => "
+INVOICE B2C/FR
+  Widget x2 = 20,00
+  Gadget x12 = 114,00
+items=14 net=134,00 shipping=0,00 tax=26,80 TOTAL=161,00"
+["B2C", "FR", "Widget,2,10.00;Gadget,12,9.50", true, false] => "
+INVOICE B2C/FR
+  Widget x2 = 20,00
+  Gadget x12 = 108,30
+items=14 net=128,30 shipping=0,00 tax=25,66 TOTAL=153,96"
+["B2C", "FR", "Widget,2,10.00;Gadget,12,9.50", true, true] => "
+INVOICE B2C/FR
+  Widget x2 = 20,00
+  Gadget x12 = 108,30
+items=14 net=128,30 shipping=0,00 tax=25,66 TOTAL=154,00"
+["B2C", "FR", "Server,1,900.00,25", false, false] => "
+INVOICE B2C/FR
+  Server x1 = 900,00
+items=1 net=900,00 shipping=29,90 tax=185,98 TOTAL=1115,88"
+["B2C", "FR", "Server,1,900.00,25", false, true] => "
+INVOICE B2C/FR
+  Server x1 = 900,00
+items=1 net=900,00 shipping=29,90 tax=185,98 TOTAL=1116,00"
+["B2C", "FR", "Server,1,900.00,25", true, false] => "
+INVOICE B2C/FR
+  Server x1 = 900,00
+items=1 net=900,00 shipping=29,90 tax=185,98 TOTAL=1115,88"
+["B2C", "FR", "Server,1,900.00,25", true, true] => "
+INVOICE B2C/FR
+  Server x1 = 900,00
+items=1 net=900,00 shipping=29,90 tax=185,98 TOTAL=1116,00"
+["B2C", "FR", "Bolt,100,12.00", false, false] => "
+INVOICE B2C/FR
+  Bolt x100 = 1200,00
+items=100 net=1200,00 shipping=0,00 tax=240,00 TOTAL=1440,00"
+["B2C", "FR", "Bolt,100,12.00", false, true] => "
+INVOICE B2C/FR
+  Bolt x100 = 1200,00
+items=100 net=1200,00 shipping=0,00 tax=240,00 TOTAL=1440,00"
+["B2C", "FR", "Bolt,100,12.00", true, false] => "
+INVOICE B2C/FR
+  Bolt x100 = 1140,00
+items=100 net=1140,00 discount=15,00 shipping=0,00 tax=225,00 TOTAL=1350,00"
+["B2C", "FR", "Bolt,100,12.00", true, true] => "
+INVOICE B2C/FR
+  Bolt x100 = 1140,00
+items=100 net=1140,00 discount=15,00 shipping=0,00 tax=225,00 TOTAL=1350,00"
+["B2C", "FR", "Pin,60,1.00", false, false] => "
+INVOICE B2C/FR
+  Pin x60 = 60,00
+items=60 net=60,00 shipping=9,90 tax=13,98 TOTAL=83,88"
+["B2C", "FR", "Pin,60,1.00", false, true] => "
+INVOICE B2C/FR
+  Pin x60 = 60,00
+items=60 net=60,00 shipping=9,90 tax=13,98 TOTAL=84,00"
+["B2C", "FR", "Pin,60,1.00", true, false] => "
+INVOICE B2C/FR
+  Pin x60 = 57,00
+items=60 net=57,00 discount=15,00 shipping=9,90 tax=10,38 TOTAL=62,28"
+["B2C", "FR", "Pin,60,1.00", true, true] => "
+INVOICE B2C/FR
+  Pin x60 = 57,00
+items=60 net=57,00 discount=15,00 shipping=9,90 tax=10,38 TOTAL=62,50"
+["B2C", "FR", "Thing,1,20000", false, false] => "
+INVOICE B2C/FR
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=4000,00 TOTAL=24000,00 [REVIEW]"
+["B2C", "FR", "Thing,1,20000", false, true] => "
+INVOICE B2C/FR
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=4000,00 TOTAL=24000,00 [REVIEW]"
+["B2C", "FR", "Thing,1,20000", true, false] => "
+INVOICE B2C/FR
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=4000,00 TOTAL=24000,00 [REVIEW]"
+["B2C", "FR", "Thing,1,20000", true, true] => "
+INVOICE B2C/FR
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=4000,00 TOTAL=24000,00 [REVIEW]"
+["B2C", "FR", "x,1,5;bad;y,abc,1;z,0,1,0", false, false] => "
+INVOICE B2C/FR
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=9,90 tax=2,98 TOTAL=17,88"
+["B2C", "FR", "x,1,5;bad;y,abc,1;z,0,1,0", false, true] => "
+INVOICE B2C/FR
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=9,90 tax=2,98 TOTAL=18,00"
+["B2C", "FR", "x,1,5;bad;y,abc,1;z,0,1,0", true, false] => "
+INVOICE B2C/FR
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=9,90 tax=2,98 TOTAL=17,88"
+["B2C", "FR", "x,1,5;bad;y,abc,1;z,0,1,0", true, true] => "
+INVOICE B2C/FR
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=9,90 tax=2,98 TOTAL=18,00"
+["B2C", "FR", "", false, false] => "
+ERROR: no lines"
+["B2C", "FR", "", false, true] => "
+ERROR: no lines"
+["B2C", "FR", "", true, false] => "
+ERROR: no lines"
+["B2C", "FR", "", true, true] => "
+ERROR: no lines"
+["B2C", "", "Widget,2,10.00", false, false] => "
+ERROR: country missing"
+["B2C", "", "Widget,2,10.00", false, true] => "
+ERROR: country missing"
+["B2C", "", "Widget,2,10.00", true, false] => "
+ERROR: country missing"
+["B2C", "", "Widget,2,10.00", true, true] => "
+ERROR: country missing"
+["B2C", "", "Widget,2,10.00;Gadget,12,9.50", false, false] => "
+ERROR: country missing"
+["B2C", "", "Widget,2,10.00;Gadget,12,9.50", false, true] => "
+ERROR: country missing"
+["B2C", "", "Widget,2,10.00;Gadget,12,9.50", true, false] => "
+ERROR: country missing"
+["B2C", "", "Widget,2,10.00;Gadget,12,9.50", true, true] => "
+ERROR: country missing"
+["B2C", "", "Server,1,900.00,25", false, false] => "
+ERROR: country missing"
+["B2C", "", "Server,1,900.00,25", false, true] => "
+ERROR: country missing"
+["B2C", "", "Server,1,900.00,25", true, false] => "
+ERROR: country missing"
+["B2C", "", "Server,1,900.00,25", true, true] => "
+ERROR: country missing"
+["B2C", "", "Bolt,100,12.00", false, false] => "
+ERROR: country missing"
+["B2C", "", "Bolt,100,12.00", false, true] => "
+ERROR: country missing"
+["B2C", "", "Bolt,100,12.00", true, false] => "
+ERROR: country missing"
+["B2C", "", "Bolt,100,12.00", true, true] => "
+ERROR: country missing"
+["B2C", "", "Pin,60,1.00", false, false] => "
+ERROR: country missing"
+["B2C", "", "Pin,60,1.00", false, true] => "
+ERROR: country missing"
+["B2C", "", "Pin,60,1.00", true, false] => "
+ERROR: country missing"
+["B2C", "", "Pin,60,1.00", true, true] => "
+ERROR: country missing"
+["B2C", "", "Thing,1,20000", false, false] => "
+ERROR: country missing"
+["B2C", "", "Thing,1,20000", false, true] => "
+ERROR: country missing"
+["B2C", "", "Thing,1,20000", true, false] => "
+ERROR: country missing"
+["B2C", "", "Thing,1,20000", true, true] => "
+ERROR: country missing"
+["B2C", "", "x,1,5;bad;y,abc,1;z,0,1,0", false, false] => "
+ERROR: country missing"
+["B2C", "", "x,1,5;bad;y,abc,1;z,0,1,0", false, true] => "
+ERROR: country missing"
+["B2C", "", "x,1,5;bad;y,abc,1;z,0,1,0", true, false] => "
+ERROR: country missing"
+["B2C", "", "x,1,5;bad;y,abc,1;z,0,1,0", true, true] => "
+ERROR: country missing"
+["B2C", "", "", false, false] => "
+ERROR: country missing"
+["B2C", "", "", false, true] => "
+ERROR: country missing"
+["B2C", "", "", true, false] => "
+ERROR: country missing"
+["B2C", "", "", true, true] => "
+ERROR: country missing"
+["B2B", "SK", "Widget,2,10.00", false, false] => "
+INVOICE B2B/SK
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=0,00 tax=4,60 TOTAL=24,60"
+["B2B", "SK", "Widget,2,10.00", false, true] => "
+INVOICE B2B/SK
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=0,00 tax=4,60 TOTAL=24,50"
+["B2B", "SK", "Widget,2,10.00", true, false] => "
+INVOICE B2B/SK
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=0,00 tax=4,60 TOTAL=24,60"
+["B2B", "SK", "Widget,2,10.00", true, true] => "
+INVOICE B2B/SK
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=0,00 tax=4,60 TOTAL=24,50"
+["B2B", "SK", "Widget,2,10.00;Gadget,12,9.50", false, false] => "
+INVOICE B2B/SK
+  Widget x2 = 20,00
+  Gadget x12 = 114,00
+items=14 net=134,00 shipping=0,00 tax=30,82 TOTAL=164,82"
+["B2B", "SK", "Widget,2,10.00;Gadget,12,9.50", false, true] => "
+INVOICE B2B/SK
+  Widget x2 = 20,00
+  Gadget x12 = 114,00
+items=14 net=134,00 shipping=0,00 tax=30,82 TOTAL=165,00"
+["B2B", "SK", "Widget,2,10.00;Gadget,12,9.50", true, false] => "
+INVOICE B2B/SK
+  Widget x2 = 20,00
+  Gadget x12 = 108,30
+items=14 net=128,30 shipping=0,00 tax=29,51 TOTAL=157,81"
+["B2B", "SK", "Widget,2,10.00;Gadget,12,9.50", true, true] => "
+INVOICE B2B/SK
+  Widget x2 = 20,00
+  Gadget x12 = 108,30
+items=14 net=128,30 shipping=0,00 tax=29,51 TOTAL=158,00"
+["B2B", "SK", "Server,1,900.00,25", false, false] => "
+INVOICE B2B/SK
+  Server x1 = 900,00
+items=1 net=900,00 shipping=0,00 tax=207,00 TOTAL=1107,00"
+["B2B", "SK", "Server,1,900.00,25", false, true] => "
+INVOICE B2B/SK
+  Server x1 = 900,00
+items=1 net=900,00 shipping=0,00 tax=207,00 TOTAL=1107,00"
+["B2B", "SK", "Server,1,900.00,25", true, false] => "
+INVOICE B2B/SK
+  Server x1 = 900,00
+items=1 net=900,00 shipping=0,00 tax=207,00 TOTAL=1107,00"
+["B2B", "SK", "Server,1,900.00,25", true, true] => "
+INVOICE B2B/SK
+  Server x1 = 900,00
+items=1 net=900,00 shipping=0,00 tax=207,00 TOTAL=1107,00"
+["B2B", "SK", "Bolt,100,12.00", false, false] => "
+INVOICE B2B/SK
+  Bolt x100 = 1200,00
+items=100 net=1200,00 shipping=0,00 tax=276,00 TOTAL=1476,00"
+["B2B", "SK", "Bolt,100,12.00", false, true] => "
+INVOICE B2B/SK
+  Bolt x100 = 1200,00
+items=100 net=1200,00 shipping=0,00 tax=276,00 TOTAL=1476,00"
+["B2B", "SK", "Bolt,100,12.00", true, false] => "
+INVOICE B2B/SK
+  Bolt x100 = 1140,00
+items=100 net=1140,00 discount=57,00 shipping=0,00 tax=249,09 TOTAL=1332,09"
+["B2B", "SK", "Bolt,100,12.00", true, true] => "
+INVOICE B2B/SK
+  Bolt x100 = 1140,00
+items=100 net=1140,00 discount=57,00 shipping=0,00 tax=249,09 TOTAL=1332,00"
+["B2B", "SK", "Pin,60,1.00", false, false] => "
+INVOICE B2B/SK
+  Pin x60 = 60,00
+items=60 net=60,00 shipping=0,00 tax=13,80 TOTAL=73,80"
+["B2B", "SK", "Pin,60,1.00", false, true] => "
+INVOICE B2B/SK
+  Pin x60 = 60,00
+items=60 net=60,00 shipping=0,00 tax=13,80 TOTAL=74,00"
+["B2B", "SK", "Pin,60,1.00", true, false] => "
+INVOICE B2B/SK
+  Pin x60 = 57,00
+items=60 net=57,00 discount=15,00 shipping=0,00 tax=9,66 TOTAL=51,66"
+["B2B", "SK", "Pin,60,1.00", true, true] => "
+INVOICE B2B/SK
+  Pin x60 = 57,00
+items=60 net=57,00 discount=15,00 shipping=0,00 tax=9,66 TOTAL=51,50"
+["B2B", "SK", "Thing,1,20000", false, false] => "
+INVOICE B2B/SK
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=4600,00 TOTAL=24600,00 [REVIEW]"
+["B2B", "SK", "Thing,1,20000", false, true] => "
+INVOICE B2B/SK
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=4600,00 TOTAL=24600,00 [REVIEW]"
+["B2B", "SK", "Thing,1,20000", true, false] => "
+INVOICE B2B/SK
+  Thing x1 = 20000,00
+items=1 net=20000,00 discount=1000,00 shipping=0,00 tax=4370,00 TOTAL=23370,00 [REVIEW]"
+["B2B", "SK", "Thing,1,20000", true, true] => "
+INVOICE B2B/SK
+  Thing x1 = 20000,00
+items=1 net=20000,00 discount=1000,00 shipping=0,00 tax=4370,00 TOTAL=23370,00 [REVIEW]"
+["B2B", "SK", "x,1,5;bad;y,abc,1;z,0,1,0", false, false] => "
+INVOICE B2B/SK
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=0,00 tax=1,15 TOTAL=6,15"
+["B2B", "SK", "x,1,5;bad;y,abc,1;z,0,1,0", false, true] => "
+INVOICE B2B/SK
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=0,00 tax=1,15 TOTAL=6,00"
+["B2B", "SK", "x,1,5;bad;y,abc,1;z,0,1,0", true, false] => "
+INVOICE B2B/SK
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=0,00 tax=1,15 TOTAL=6,15"
+["B2B", "SK", "x,1,5;bad;y,abc,1;z,0,1,0", true, true] => "
+INVOICE B2B/SK
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=0,00 tax=1,15 TOTAL=6,00"
+["B2B", "SK", "", false, false] => "
+ERROR: no lines"
+["B2B", "SK", "", false, true] => "
+ERROR: no lines"
+["B2B", "SK", "", true, false] => "
+ERROR: no lines"
+["B2B", "SK", "", true, true] => "
+ERROR: no lines"
+["B2B", "DE", "Widget,2,10.00", false, false] => "
+INVOICE B2B/DE
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=0,00 tax=0,00 TOTAL=20,00"
+["B2B", "DE", "Widget,2,10.00", false, true] => "
+INVOICE B2B/DE
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=0,00 tax=0,00 TOTAL=20,00"
+["B2B", "DE", "Widget,2,10.00", true, false] => "
+INVOICE B2B/DE
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=0,00 tax=0,00 TOTAL=20,00"
+["B2B", "DE", "Widget,2,10.00", true, true] => "
+INVOICE B2B/DE
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=0,00 tax=0,00 TOTAL=20,00"
+["B2B", "DE", "Widget,2,10.00;Gadget,12,9.50", false, false] => "
+INVOICE B2B/DE
+  Widget x2 = 20,00
+  Gadget x12 = 114,00
+items=14 net=134,00 shipping=0,00 tax=0,00 TOTAL=134,00"
+["B2B", "DE", "Widget,2,10.00;Gadget,12,9.50", false, true] => "
+INVOICE B2B/DE
+  Widget x2 = 20,00
+  Gadget x12 = 114,00
+items=14 net=134,00 shipping=0,00 tax=0,00 TOTAL=134,00"
+["B2B", "DE", "Widget,2,10.00;Gadget,12,9.50", true, false] => "
+INVOICE B2B/DE
+  Widget x2 = 20,00
+  Gadget x12 = 108,30
+items=14 net=128,30 shipping=0,00 tax=0,00 TOTAL=128,30"
+["B2B", "DE", "Widget,2,10.00;Gadget,12,9.50", true, true] => "
+INVOICE B2B/DE
+  Widget x2 = 20,00
+  Gadget x12 = 108,30
+items=14 net=128,30 shipping=0,00 tax=0,00 TOTAL=128,50"
+["B2B", "DE", "Server,1,900.00,25", false, false] => "
+INVOICE B2B/DE
+  Server x1 = 900,00
+items=1 net=900,00 shipping=0,00 tax=0,00 TOTAL=900,00"
+["B2B", "DE", "Server,1,900.00,25", false, true] => "
+INVOICE B2B/DE
+  Server x1 = 900,00
+items=1 net=900,00 shipping=0,00 tax=0,00 TOTAL=900,00"
+["B2B", "DE", "Server,1,900.00,25", true, false] => "
+INVOICE B2B/DE
+  Server x1 = 900,00
+items=1 net=900,00 shipping=0,00 tax=0,00 TOTAL=900,00"
+["B2B", "DE", "Server,1,900.00,25", true, true] => "
+INVOICE B2B/DE
+  Server x1 = 900,00
+items=1 net=900,00 shipping=0,00 tax=0,00 TOTAL=900,00"
+["B2B", "DE", "Bolt,100,12.00", false, false] => "
+INVOICE B2B/DE
+  Bolt x100 = 1200,00
+items=100 net=1200,00 shipping=0,00 tax=0,00 TOTAL=1200,00"
+["B2B", "DE", "Bolt,100,12.00", false, true] => "
+INVOICE B2B/DE
+  Bolt x100 = 1200,00
+items=100 net=1200,00 shipping=0,00 tax=0,00 TOTAL=1200,00"
+["B2B", "DE", "Bolt,100,12.00", true, false] => "
+INVOICE B2B/DE
+  Bolt x100 = 1140,00
+items=100 net=1140,00 discount=57,00 shipping=0,00 tax=0,00 TOTAL=1083,00"
+["B2B", "DE", "Bolt,100,12.00", true, true] => "
+INVOICE B2B/DE
+  Bolt x100 = 1140,00
+items=100 net=1140,00 discount=57,00 shipping=0,00 tax=0,00 TOTAL=1083,00"
+["B2B", "DE", "Pin,60,1.00", false, false] => "
+INVOICE B2B/DE
+  Pin x60 = 60,00
+items=60 net=60,00 shipping=0,00 tax=0,00 TOTAL=60,00"
+["B2B", "DE", "Pin,60,1.00", false, true] => "
+INVOICE B2B/DE
+  Pin x60 = 60,00
+items=60 net=60,00 shipping=0,00 tax=0,00 TOTAL=60,00"
+["B2B", "DE", "Pin,60,1.00", true, false] => "
+INVOICE B2B/DE
+  Pin x60 = 57,00
+items=60 net=57,00 discount=15,00 shipping=0,00 tax=0,00 TOTAL=42,00"
+["B2B", "DE", "Pin,60,1.00", true, true] => "
+INVOICE B2B/DE
+  Pin x60 = 57,00
+items=60 net=57,00 discount=15,00 shipping=0,00 tax=0,00 TOTAL=42,00"
+["B2B", "DE", "Thing,1,20000", false, false] => "
+INVOICE B2B/DE
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=0,00 TOTAL=20000,00 [REVIEW]"
+["B2B", "DE", "Thing,1,20000", false, true] => "
+INVOICE B2B/DE
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=0,00 TOTAL=20000,00 [REVIEW]"
+["B2B", "DE", "Thing,1,20000", true, false] => "
+INVOICE B2B/DE
+  Thing x1 = 20000,00
+items=1 net=20000,00 discount=1000,00 shipping=0,00 tax=0,00 TOTAL=19000,00 [REVIEW]"
+["B2B", "DE", "Thing,1,20000", true, true] => "
+INVOICE B2B/DE
+  Thing x1 = 20000,00
+items=1 net=20000,00 discount=1000,00 shipping=0,00 tax=0,00 TOTAL=19000,00 [REVIEW]"
+["B2B", "DE", "x,1,5;bad;y,abc,1;z,0,1,0", false, false] => "
+INVOICE B2B/DE
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=0,00 tax=0,00 TOTAL=5,00"
+["B2B", "DE", "x,1,5;bad;y,abc,1;z,0,1,0", false, true] => "
+INVOICE B2B/DE
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=0,00 tax=0,00 TOTAL=5,00"
+["B2B", "DE", "x,1,5;bad;y,abc,1;z,0,1,0", true, false] => "
+INVOICE B2B/DE
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=0,00 tax=0,00 TOTAL=5,00"
+["B2B", "DE", "x,1,5;bad;y,abc,1;z,0,1,0", true, true] => "
+INVOICE B2B/DE
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=0,00 tax=0,00 TOTAL=5,00"
+["B2B", "DE", "", false, false] => "
+ERROR: no lines"
+["B2B", "DE", "", false, true] => "
+ERROR: no lines"
+["B2B", "DE", "", true, false] => "
+ERROR: no lines"
+["B2B", "DE", "", true, true] => "
+ERROR: no lines"
+["B2B", "HU", "Widget,2,10.00", false, false] => "
+INVOICE B2B/HU
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=0,00 tax=0,00 TOTAL=20,00"
+["B2B", "HU", "Widget,2,10.00", false, true] => "
+INVOICE B2B/HU
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=0,00 tax=0,00 TOTAL=20,00"
+["B2B", "HU", "Widget,2,10.00", true, false] => "
+INVOICE B2B/HU
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=0,00 tax=0,00 TOTAL=20,00"
+["B2B", "HU", "Widget,2,10.00", true, true] => "
+INVOICE B2B/HU
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=0,00 tax=0,00 TOTAL=20,00"
+["B2B", "HU", "Widget,2,10.00;Gadget,12,9.50", false, false] => "
+INVOICE B2B/HU
+  Widget x2 = 20,00
+  Gadget x12 = 114,00
+items=14 net=134,00 shipping=0,00 tax=0,00 TOTAL=134,00"
+["B2B", "HU", "Widget,2,10.00;Gadget,12,9.50", false, true] => "
+INVOICE B2B/HU
+  Widget x2 = 20,00
+  Gadget x12 = 114,00
+items=14 net=134,00 shipping=0,00 tax=0,00 TOTAL=134,00"
+["B2B", "HU", "Widget,2,10.00;Gadget,12,9.50", true, false] => "
+INVOICE B2B/HU
+  Widget x2 = 20,00
+  Gadget x12 = 108,30
+items=14 net=128,30 shipping=0,00 tax=0,00 TOTAL=128,30"
+["B2B", "HU", "Widget,2,10.00;Gadget,12,9.50", true, true] => "
+INVOICE B2B/HU
+  Widget x2 = 20,00
+  Gadget x12 = 108,30
+items=14 net=128,30 shipping=0,00 tax=0,00 TOTAL=128,50"
+["B2B", "HU", "Server,1,900.00,25", false, false] => "
+INVOICE B2B/HU
+  Server x1 = 900,00
+items=1 net=900,00 shipping=0,00 tax=0,00 TOTAL=900,00"
+["B2B", "HU", "Server,1,900.00,25", false, true] => "
+INVOICE B2B/HU
+  Server x1 = 900,00
+items=1 net=900,00 shipping=0,00 tax=0,00 TOTAL=900,00"
+["B2B", "HU", "Server,1,900.00,25", true, false] => "
+INVOICE B2B/HU
+  Server x1 = 900,00
+items=1 net=900,00 shipping=0,00 tax=0,00 TOTAL=900,00"
+["B2B", "HU", "Server,1,900.00,25", true, true] => "
+INVOICE B2B/HU
+  Server x1 = 900,00
+items=1 net=900,00 shipping=0,00 tax=0,00 TOTAL=900,00"
+["B2B", "HU", "Bolt,100,12.00", false, false] => "
+INVOICE B2B/HU
+  Bolt x100 = 1200,00
+items=100 net=1200,00 shipping=0,00 tax=0,00 TOTAL=1200,00"
+["B2B", "HU", "Bolt,100,12.00", false, true] => "
+INVOICE B2B/HU
+  Bolt x100 = 1200,00
+items=100 net=1200,00 shipping=0,00 tax=0,00 TOTAL=1200,00"
+["B2B", "HU", "Bolt,100,12.00", true, false] => "
+INVOICE B2B/HU
+  Bolt x100 = 1140,00
+items=100 net=1140,00 discount=57,00 shipping=0,00 tax=0,00 TOTAL=1083,00"
+["B2B", "HU", "Bolt,100,12.00", true, true] => "
+INVOICE B2B/HU
+  Bolt x100 = 1140,00
+items=100 net=1140,00 discount=57,00 shipping=0,00 tax=0,00 TOTAL=1083,00"
+["B2B", "HU", "Pin,60,1.00", false, false] => "
+INVOICE B2B/HU
+  Pin x60 = 60,00
+items=60 net=60,00 shipping=0,00 tax=0,00 TOTAL=60,00"
+["B2B", "HU", "Pin,60,1.00", false, true] => "
+INVOICE B2B/HU
+  Pin x60 = 60,00
+items=60 net=60,00 shipping=0,00 tax=0,00 TOTAL=60,00"
+["B2B", "HU", "Pin,60,1.00", true, false] => "
+INVOICE B2B/HU
+  Pin x60 = 57,00
+items=60 net=57,00 discount=15,00 shipping=0,00 tax=0,00 TOTAL=42,00"
+["B2B", "HU", "Pin,60,1.00", true, true] => "
+INVOICE B2B/HU
+  Pin x60 = 57,00
+items=60 net=57,00 discount=15,00 shipping=0,00 tax=0,00 TOTAL=42,00"
+["B2B", "HU", "Thing,1,20000", false, false] => "
+INVOICE B2B/HU
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=0,00 TOTAL=20000,00 [REVIEW]"
+["B2B", "HU", "Thing,1,20000", false, true] => "
+INVOICE B2B/HU
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=0,00 TOTAL=20000,00 [REVIEW]"
+["B2B", "HU", "Thing,1,20000", true, false] => "
+INVOICE B2B/HU
+  Thing x1 = 20000,00
+items=1 net=20000,00 discount=1000,00 shipping=0,00 tax=0,00 TOTAL=19000,00 [REVIEW]"
+["B2B", "HU", "Thing,1,20000", true, true] => "
+INVOICE B2B/HU
+  Thing x1 = 20000,00
+items=1 net=20000,00 discount=1000,00 shipping=0,00 tax=0,00 TOTAL=19000,00 [REVIEW]"
+["B2B", "HU", "x,1,5;bad;y,abc,1;z,0,1,0", false, false] => "
+INVOICE B2B/HU
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=0,00 tax=0,00 TOTAL=5,00"
+["B2B", "HU", "x,1,5;bad;y,abc,1;z,0,1,0", false, true] => "
+INVOICE B2B/HU
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=0,00 tax=0,00 TOTAL=5,00"
+["B2B", "HU", "x,1,5;bad;y,abc,1;z,0,1,0", true, false] => "
+INVOICE B2B/HU
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=0,00 tax=0,00 TOTAL=5,00"
+["B2B", "HU", "x,1,5;bad;y,abc,1;z,0,1,0", true, true] => "
+INVOICE B2B/HU
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=0,00 tax=0,00 TOTAL=5,00"
+["B2B", "HU", "", false, false] => "
+ERROR: no lines"
+["B2B", "HU", "", false, true] => "
+ERROR: no lines"
+["B2B", "HU", "", true, false] => "
+ERROR: no lines"
+["B2B", "HU", "", true, true] => "
+ERROR: no lines"
+["B2B", "CH", "Widget,2,10.00", false, false] => "
+INVOICE B2B/CH
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=0,00 tax=0,00 TOTAL=20,00"
+["B2B", "CH", "Widget,2,10.00", false, true] => "
+INVOICE B2B/CH
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=0,00 tax=0,00 TOTAL=20,00"
+["B2B", "CH", "Widget,2,10.00", true, false] => "
+INVOICE B2B/CH
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=0,00 tax=0,00 TOTAL=20,00"
+["B2B", "CH", "Widget,2,10.00", true, true] => "
+INVOICE B2B/CH
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=0,00 tax=0,00 TOTAL=20,00"
+["B2B", "CH", "Widget,2,10.00;Gadget,12,9.50", false, false] => "
+INVOICE B2B/CH
+  Widget x2 = 20,00
+  Gadget x12 = 114,00
+items=14 net=134,00 shipping=0,00 tax=0,00 TOTAL=134,00"
+["B2B", "CH", "Widget,2,10.00;Gadget,12,9.50", false, true] => "
+INVOICE B2B/CH
+  Widget x2 = 20,00
+  Gadget x12 = 114,00
+items=14 net=134,00 shipping=0,00 tax=0,00 TOTAL=134,00"
+["B2B", "CH", "Widget,2,10.00;Gadget,12,9.50", true, false] => "
+INVOICE B2B/CH
+  Widget x2 = 20,00
+  Gadget x12 = 108,30
+items=14 net=128,30 shipping=0,00 tax=0,00 TOTAL=128,30"
+["B2B", "CH", "Widget,2,10.00;Gadget,12,9.50", true, true] => "
+INVOICE B2B/CH
+  Widget x2 = 20,00
+  Gadget x12 = 108,30
+items=14 net=128,30 shipping=0,00 tax=0,00 TOTAL=128,50"
+["B2B", "CH", "Server,1,900.00,25", false, false] => "
+INVOICE B2B/CH
+  Server x1 = 900,00
+items=1 net=900,00 shipping=0,00 tax=0,00 TOTAL=900,00"
+["B2B", "CH", "Server,1,900.00,25", false, true] => "
+INVOICE B2B/CH
+  Server x1 = 900,00
+items=1 net=900,00 shipping=0,00 tax=0,00 TOTAL=900,00"
+["B2B", "CH", "Server,1,900.00,25", true, false] => "
+INVOICE B2B/CH
+  Server x1 = 900,00
+items=1 net=900,00 shipping=0,00 tax=0,00 TOTAL=900,00"
+["B2B", "CH", "Server,1,900.00,25", true, true] => "
+INVOICE B2B/CH
+  Server x1 = 900,00
+items=1 net=900,00 shipping=0,00 tax=0,00 TOTAL=900,00"
+["B2B", "CH", "Bolt,100,12.00", false, false] => "
+INVOICE B2B/CH
+  Bolt x100 = 1200,00
+items=100 net=1200,00 shipping=0,00 tax=0,00 TOTAL=1200,00"
+["B2B", "CH", "Bolt,100,12.00", false, true] => "
+INVOICE B2B/CH
+  Bolt x100 = 1200,00
+items=100 net=1200,00 shipping=0,00 tax=0,00 TOTAL=1200,00"
+["B2B", "CH", "Bolt,100,12.00", true, false] => "
+INVOICE B2B/CH
+  Bolt x100 = 1140,00
+items=100 net=1140,00 discount=57,00 shipping=0,00 tax=0,00 TOTAL=1083,00"
+["B2B", "CH", "Bolt,100,12.00", true, true] => "
+INVOICE B2B/CH
+  Bolt x100 = 1140,00
+items=100 net=1140,00 discount=57,00 shipping=0,00 tax=0,00 TOTAL=1083,00"
+["B2B", "CH", "Pin,60,1.00", false, false] => "
+INVOICE B2B/CH
+  Pin x60 = 60,00
+items=60 net=60,00 shipping=0,00 tax=0,00 TOTAL=60,00"
+["B2B", "CH", "Pin,60,1.00", false, true] => "
+INVOICE B2B/CH
+  Pin x60 = 60,00
+items=60 net=60,00 shipping=0,00 tax=0,00 TOTAL=60,00"
+["B2B", "CH", "Pin,60,1.00", true, false] => "
+INVOICE B2B/CH
+  Pin x60 = 57,00
+items=60 net=57,00 discount=15,00 shipping=0,00 tax=0,00 TOTAL=42,00"
+["B2B", "CH", "Pin,60,1.00", true, true] => "
+INVOICE B2B/CH
+  Pin x60 = 57,00
+items=60 net=57,00 discount=15,00 shipping=0,00 tax=0,00 TOTAL=42,00"
+["B2B", "CH", "Thing,1,20000", false, false] => "
+INVOICE B2B/CH
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=0,00 TOTAL=20000,00 [REVIEW]"
+["B2B", "CH", "Thing,1,20000", false, true] => "
+INVOICE B2B/CH
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=0,00 TOTAL=20000,00 [REVIEW]"
+["B2B", "CH", "Thing,1,20000", true, false] => "
+INVOICE B2B/CH
+  Thing x1 = 20000,00
+items=1 net=20000,00 discount=1000,00 shipping=0,00 tax=0,00 TOTAL=19000,00 [REVIEW]"
+["B2B", "CH", "Thing,1,20000", true, true] => "
+INVOICE B2B/CH
+  Thing x1 = 20000,00
+items=1 net=20000,00 discount=1000,00 shipping=0,00 tax=0,00 TOTAL=19000,00 [REVIEW]"
+["B2B", "CH", "x,1,5;bad;y,abc,1;z,0,1,0", false, false] => "
+INVOICE B2B/CH
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=0,00 tax=0,00 TOTAL=5,00"
+["B2B", "CH", "x,1,5;bad;y,abc,1;z,0,1,0", false, true] => "
+INVOICE B2B/CH
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=0,00 tax=0,00 TOTAL=5,00"
+["B2B", "CH", "x,1,5;bad;y,abc,1;z,0,1,0", true, false] => "
+INVOICE B2B/CH
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=0,00 tax=0,00 TOTAL=5,00"
+["B2B", "CH", "x,1,5;bad;y,abc,1;z,0,1,0", true, true] => "
+INVOICE B2B/CH
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=0,00 tax=0,00 TOTAL=5,00"
+["B2B", "CH", "", false, false] => "
+ERROR: no lines"
+["B2B", "CH", "", false, true] => "
+ERROR: no lines"
+["B2B", "CH", "", true, false] => "
+ERROR: no lines"
+["B2B", "CH", "", true, true] => "
+ERROR: no lines"
+["B2B", "FR", "Widget,2,10.00", false, false] => "
+INVOICE B2B/FR
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=0,00 tax=0,00 TOTAL=20,00"
+["B2B", "FR", "Widget,2,10.00", false, true] => "
+INVOICE B2B/FR
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=0,00 tax=0,00 TOTAL=20,00"
+["B2B", "FR", "Widget,2,10.00", true, false] => "
+INVOICE B2B/FR
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=0,00 tax=0,00 TOTAL=20,00"
+["B2B", "FR", "Widget,2,10.00", true, true] => "
+INVOICE B2B/FR
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=0,00 tax=0,00 TOTAL=20,00"
+["B2B", "FR", "Widget,2,10.00;Gadget,12,9.50", false, false] => "
+INVOICE B2B/FR
+  Widget x2 = 20,00
+  Gadget x12 = 114,00
+items=14 net=134,00 shipping=0,00 tax=0,00 TOTAL=134,00"
+["B2B", "FR", "Widget,2,10.00;Gadget,12,9.50", false, true] => "
+INVOICE B2B/FR
+  Widget x2 = 20,00
+  Gadget x12 = 114,00
+items=14 net=134,00 shipping=0,00 tax=0,00 TOTAL=134,00"
+["B2B", "FR", "Widget,2,10.00;Gadget,12,9.50", true, false] => "
+INVOICE B2B/FR
+  Widget x2 = 20,00
+  Gadget x12 = 108,30
+items=14 net=128,30 shipping=0,00 tax=0,00 TOTAL=128,30"
+["B2B", "FR", "Widget,2,10.00;Gadget,12,9.50", true, true] => "
+INVOICE B2B/FR
+  Widget x2 = 20,00
+  Gadget x12 = 108,30
+items=14 net=128,30 shipping=0,00 tax=0,00 TOTAL=128,50"
+["B2B", "FR", "Server,1,900.00,25", false, false] => "
+INVOICE B2B/FR
+  Server x1 = 900,00
+items=1 net=900,00 shipping=0,00 tax=0,00 TOTAL=900,00"
+["B2B", "FR", "Server,1,900.00,25", false, true] => "
+INVOICE B2B/FR
+  Server x1 = 900,00
+items=1 net=900,00 shipping=0,00 tax=0,00 TOTAL=900,00"
+["B2B", "FR", "Server,1,900.00,25", true, false] => "
+INVOICE B2B/FR
+  Server x1 = 900,00
+items=1 net=900,00 shipping=0,00 tax=0,00 TOTAL=900,00"
+["B2B", "FR", "Server,1,900.00,25", true, true] => "
+INVOICE B2B/FR
+  Server x1 = 900,00
+items=1 net=900,00 shipping=0,00 tax=0,00 TOTAL=900,00"
+["B2B", "FR", "Bolt,100,12.00", false, false] => "
+INVOICE B2B/FR
+  Bolt x100 = 1200,00
+items=100 net=1200,00 shipping=0,00 tax=0,00 TOTAL=1200,00"
+["B2B", "FR", "Bolt,100,12.00", false, true] => "
+INVOICE B2B/FR
+  Bolt x100 = 1200,00
+items=100 net=1200,00 shipping=0,00 tax=0,00 TOTAL=1200,00"
+["B2B", "FR", "Bolt,100,12.00", true, false] => "
+INVOICE B2B/FR
+  Bolt x100 = 1140,00
+items=100 net=1140,00 discount=57,00 shipping=0,00 tax=0,00 TOTAL=1083,00"
+["B2B", "FR", "Bolt,100,12.00", true, true] => "
+INVOICE B2B/FR
+  Bolt x100 = 1140,00
+items=100 net=1140,00 discount=57,00 shipping=0,00 tax=0,00 TOTAL=1083,00"
+["B2B", "FR", "Pin,60,1.00", false, false] => "
+INVOICE B2B/FR
+  Pin x60 = 60,00
+items=60 net=60,00 shipping=0,00 tax=0,00 TOTAL=60,00"
+["B2B", "FR", "Pin,60,1.00", false, true] => "
+INVOICE B2B/FR
+  Pin x60 = 60,00
+items=60 net=60,00 shipping=0,00 tax=0,00 TOTAL=60,00"
+["B2B", "FR", "Pin,60,1.00", true, false] => "
+INVOICE B2B/FR
+  Pin x60 = 57,00
+items=60 net=57,00 discount=15,00 shipping=0,00 tax=0,00 TOTAL=42,00"
+["B2B", "FR", "Pin,60,1.00", true, true] => "
+INVOICE B2B/FR
+  Pin x60 = 57,00
+items=60 net=57,00 discount=15,00 shipping=0,00 tax=0,00 TOTAL=42,00"
+["B2B", "FR", "Thing,1,20000", false, false] => "
+INVOICE B2B/FR
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=0,00 TOTAL=20000,00 [REVIEW]"
+["B2B", "FR", "Thing,1,20000", false, true] => "
+INVOICE B2B/FR
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=0,00 TOTAL=20000,00 [REVIEW]"
+["B2B", "FR", "Thing,1,20000", true, false] => "
+INVOICE B2B/FR
+  Thing x1 = 20000,00
+items=1 net=20000,00 discount=1000,00 shipping=0,00 tax=0,00 TOTAL=19000,00 [REVIEW]"
+["B2B", "FR", "Thing,1,20000", true, true] => "
+INVOICE B2B/FR
+  Thing x1 = 20000,00
+items=1 net=20000,00 discount=1000,00 shipping=0,00 tax=0,00 TOTAL=19000,00 [REVIEW]"
+["B2B", "FR", "x,1,5;bad;y,abc,1;z,0,1,0", false, false] => "
+INVOICE B2B/FR
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=0,00 tax=0,00 TOTAL=5,00"
+["B2B", "FR", "x,1,5;bad;y,abc,1;z,0,1,0", false, true] => "
+INVOICE B2B/FR
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=0,00 tax=0,00 TOTAL=5,00"
+["B2B", "FR", "x,1,5;bad;y,abc,1;z,0,1,0", true, false] => "
+INVOICE B2B/FR
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=0,00 tax=0,00 TOTAL=5,00"
+["B2B", "FR", "x,1,5;bad;y,abc,1;z,0,1,0", true, true] => "
+INVOICE B2B/FR
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=0,00 tax=0,00 TOTAL=5,00"
+["B2B", "FR", "", false, false] => "
+ERROR: no lines"
+["B2B", "FR", "", false, true] => "
+ERROR: no lines"
+["B2B", "FR", "", true, false] => "
+ERROR: no lines"
+["B2B", "FR", "", true, true] => "
+ERROR: no lines"
+["B2B", "", "Widget,2,10.00", false, false] => "
+ERROR: country missing"
+["B2B", "", "Widget,2,10.00", false, true] => "
+ERROR: country missing"
+["B2B", "", "Widget,2,10.00", true, false] => "
+ERROR: country missing"
+["B2B", "", "Widget,2,10.00", true, true] => "
+ERROR: country missing"
+["B2B", "", "Widget,2,10.00;Gadget,12,9.50", false, false] => "
+ERROR: country missing"
+["B2B", "", "Widget,2,10.00;Gadget,12,9.50", false, true] => "
+ERROR: country missing"
+["B2B", "", "Widget,2,10.00;Gadget,12,9.50", true, false] => "
+ERROR: country missing"
+["B2B", "", "Widget,2,10.00;Gadget,12,9.50", true, true] => "
+ERROR: country missing"
+["B2B", "", "Server,1,900.00,25", false, false] => "
+ERROR: country missing"
+["B2B", "", "Server,1,900.00,25", false, true] => "
+ERROR: country missing"
+["B2B", "", "Server,1,900.00,25", true, false] => "
+ERROR: country missing"
+["B2B", "", "Server,1,900.00,25", true, true] => "
+ERROR: country missing"
+["B2B", "", "Bolt,100,12.00", false, false] => "
+ERROR: country missing"
+["B2B", "", "Bolt,100,12.00", false, true] => "
+ERROR: country missing"
+["B2B", "", "Bolt,100,12.00", true, false] => "
+ERROR: country missing"
+["B2B", "", "Bolt,100,12.00", true, true] => "
+ERROR: country missing"
+["B2B", "", "Pin,60,1.00", false, false] => "
+ERROR: country missing"
+["B2B", "", "Pin,60,1.00", false, true] => "
+ERROR: country missing"
+["B2B", "", "Pin,60,1.00", true, false] => "
+ERROR: country missing"
+["B2B", "", "Pin,60,1.00", true, true] => "
+ERROR: country missing"
+["B2B", "", "Thing,1,20000", false, false] => "
+ERROR: country missing"
+["B2B", "", "Thing,1,20000", false, true] => "
+ERROR: country missing"
+["B2B", "", "Thing,1,20000", true, false] => "
+ERROR: country missing"
+["B2B", "", "Thing,1,20000", true, true] => "
+ERROR: country missing"
+["B2B", "", "x,1,5;bad;y,abc,1;z,0,1,0", false, false] => "
+ERROR: country missing"
+["B2B", "", "x,1,5;bad;y,abc,1;z,0,1,0", false, true] => "
+ERROR: country missing"
+["B2B", "", "x,1,5;bad;y,abc,1;z,0,1,0", true, false] => "
+ERROR: country missing"
+["B2B", "", "x,1,5;bad;y,abc,1;z,0,1,0", true, true] => "
+ERROR: country missing"
+["B2B", "", "", false, false] => "
+ERROR: country missing"
+["B2B", "", "", false, true] => "
+ERROR: country missing"
+["B2B", "", "", true, false] => "
+ERROR: country missing"
+["B2B", "", "", true, true] => "
+ERROR: country missing"
+["VIP", "SK", "Widget,2,10.00", false, false] => "
+INVOICE VIP/SK
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=3,90 tax=5,50 TOTAL=29,40"
+["VIP", "SK", "Widget,2,10.00", false, true] => "
+INVOICE VIP/SK
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=3,90 tax=5,50 TOTAL=29,50"
+["VIP", "SK", "Widget,2,10.00", true, false] => "
+INVOICE VIP/SK
+  Widget x2 = 20,00
+items=2 net=20,00 discount=2,00 shipping=3,90 tax=5,04 TOTAL=26,94"
+["VIP", "SK", "Widget,2,10.00", true, true] => "
+INVOICE VIP/SK
+  Widget x2 = 20,00
+items=2 net=20,00 discount=2,00 shipping=3,90 tax=5,04 TOTAL=27,00"
+["VIP", "SK", "Widget,2,10.00;Gadget,12,9.50", false, false] => "
+INVOICE VIP/SK
+  Widget x2 = 20,00
+  Gadget x12 = 114,00
+items=14 net=134,00 shipping=0,00 tax=30,82 TOTAL=164,82"
+["VIP", "SK", "Widget,2,10.00;Gadget,12,9.50", false, true] => "
+INVOICE VIP/SK
+  Widget x2 = 20,00
+  Gadget x12 = 114,00
+items=14 net=134,00 shipping=0,00 tax=30,82 TOTAL=165,00"
+["VIP", "SK", "Widget,2,10.00;Gadget,12,9.50", true, false] => "
+INVOICE VIP/SK
+  Widget x2 = 20,00
+  Gadget x12 = 108,30
+items=14 net=128,30 discount=12,83 shipping=0,00 tax=26,56 TOTAL=142,03"
+["VIP", "SK", "Widget,2,10.00;Gadget,12,9.50", true, true] => "
+INVOICE VIP/SK
+  Widget x2 = 20,00
+  Gadget x12 = 108,30
+items=14 net=128,30 discount=12,83 shipping=0,00 tax=26,56 TOTAL=142,00"
+["VIP", "SK", "Server,1,900.00,25", false, false] => "
+INVOICE VIP/SK
+  Server x1 = 900,00
+items=1 net=900,00 shipping=29,90 tax=213,88 TOTAL=1143,78"
+["VIP", "SK", "Server,1,900.00,25", false, true] => "
+INVOICE VIP/SK
+  Server x1 = 900,00
+items=1 net=900,00 shipping=29,90 tax=213,88 TOTAL=1144,00"
+["VIP", "SK", "Server,1,900.00,25", true, false] => "
+INVOICE VIP/SK
+  Server x1 = 875,00
+items=1 net=875,00 discount=87,50 shipping=29,90 tax=188,00 TOTAL=1005,40"
+["VIP", "SK", "Server,1,900.00,25", true, true] => "
+INVOICE VIP/SK
+  Server x1 = 875,00
+items=1 net=875,00 discount=87,50 shipping=29,90 tax=188,00 TOTAL=1005,50"
+["VIP", "SK", "Bolt,100,12.00", false, false] => "
+INVOICE VIP/SK
+  Bolt x100 = 1200,00
+items=100 net=1200,00 shipping=0,00 tax=276,00 TOTAL=1476,00"
+["VIP", "SK", "Bolt,100,12.00", false, true] => "
+INVOICE VIP/SK
+  Bolt x100 = 1200,00
+items=100 net=1200,00 shipping=0,00 tax=276,00 TOTAL=1476,00"
+["VIP", "SK", "Bolt,100,12.00", true, false] => "
+INVOICE VIP/SK
+  Bolt x100 = 1115,00
+items=100 net=1115,00 discount=111,50 shipping=0,00 tax=230,81 TOTAL=1234,31"
+["VIP", "SK", "Bolt,100,12.00", true, true] => "
+INVOICE VIP/SK
+  Bolt x100 = 1115,00
+items=100 net=1115,00 discount=111,50 shipping=0,00 tax=230,81 TOTAL=1234,50"
+["VIP", "SK", "Pin,60,1.00", false, false] => "
+INVOICE VIP/SK
+  Pin x60 = 60,00
+items=60 net=60,00 shipping=3,90 tax=14,70 TOTAL=78,60"
+["VIP", "SK", "Pin,60,1.00", false, true] => "
+INVOICE VIP/SK
+  Pin x60 = 60,00
+items=60 net=60,00 shipping=3,90 tax=14,70 TOTAL=78,50"
+["VIP", "SK", "Pin,60,1.00", true, false] => "
+INVOICE VIP/SK
+  Pin x60 = 57,00
+items=60 net=57,00 discount=5,70 shipping=3,90 tax=12,70 TOTAL=67,90"
+["VIP", "SK", "Pin,60,1.00", true, true] => "
+INVOICE VIP/SK
+  Pin x60 = 57,00
+items=60 net=57,00 discount=5,70 shipping=3,90 tax=12,70 TOTAL=68,00"
+["VIP", "SK", "Thing,1,20000", false, false] => "
+INVOICE VIP/SK
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=4600,00 TOTAL=24600,00 [REVIEW]"
+["VIP", "SK", "Thing,1,20000", false, true] => "
+INVOICE VIP/SK
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=4600,00 TOTAL=24600,00 [REVIEW]"
+["VIP", "SK", "Thing,1,20000", true, false] => "
+INVOICE VIP/SK
+  Thing x1 = 19975,00
+items=1 net=19975,00 discount=1997,50 shipping=0,00 tax=4134,83 TOTAL=22112,33 [REVIEW]"
+["VIP", "SK", "Thing,1,20000", true, true] => "
+INVOICE VIP/SK
+  Thing x1 = 19975,00
+items=1 net=19975,00 discount=1997,50 shipping=0,00 tax=4134,83 TOTAL=22112,50 [REVIEW]"
+["VIP", "SK", "x,1,5;bad;y,abc,1;z,0,1,0", false, false] => "
+INVOICE VIP/SK
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=3,90 tax=2,05 TOTAL=10,95"
+["VIP", "SK", "x,1,5;bad;y,abc,1;z,0,1,0", false, true] => "
+INVOICE VIP/SK
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=3,90 tax=2,05 TOTAL=11,00"
+["VIP", "SK", "x,1,5;bad;y,abc,1;z,0,1,0", true, false] => "
+INVOICE VIP/SK
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 discount=0,50 shipping=3,90 tax=1,93 TOTAL=10,33"
+["VIP", "SK", "x,1,5;bad;y,abc,1;z,0,1,0", true, true] => "
+INVOICE VIP/SK
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 discount=0,50 shipping=3,90 tax=1,93 TOTAL=10,50"
+["VIP", "SK", "", false, false] => "
+ERROR: no lines"
+["VIP", "SK", "", false, true] => "
+ERROR: no lines"
+["VIP", "SK", "", true, false] => "
+ERROR: no lines"
+["VIP", "SK", "", true, true] => "
+ERROR: no lines"
+["VIP", "DE", "Widget,2,10.00", false, false] => "
+INVOICE VIP/DE
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=9,90 tax=5,68 TOTAL=35,58"
+["VIP", "DE", "Widget,2,10.00", false, true] => "
+INVOICE VIP/DE
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=9,90 tax=5,68 TOTAL=35,50"
+["VIP", "DE", "Widget,2,10.00", true, false] => "
+INVOICE VIP/DE
+  Widget x2 = 20,00
+items=2 net=20,00 discount=2,00 shipping=9,90 tax=5,30 TOTAL=33,20"
+["VIP", "DE", "Widget,2,10.00", true, true] => "
+INVOICE VIP/DE
+  Widget x2 = 20,00
+items=2 net=20,00 discount=2,00 shipping=9,90 tax=5,30 TOTAL=33,00"
+["VIP", "DE", "Widget,2,10.00;Gadget,12,9.50", false, false] => "
+INVOICE VIP/DE
+  Widget x2 = 20,00
+  Gadget x12 = 114,00
+items=14 net=134,00 shipping=0,00 tax=25,46 TOTAL=159,46"
+["VIP", "DE", "Widget,2,10.00;Gadget,12,9.50", false, true] => "
+INVOICE VIP/DE
+  Widget x2 = 20,00
+  Gadget x12 = 114,00
+items=14 net=134,00 shipping=0,00 tax=25,46 TOTAL=159,50"
+["VIP", "DE", "Widget,2,10.00;Gadget,12,9.50", true, false] => "
+INVOICE VIP/DE
+  Widget x2 = 20,00
+  Gadget x12 = 108,30
+items=14 net=128,30 discount=12,83 shipping=0,00 tax=21,94 TOTAL=137,41"
+["VIP", "DE", "Widget,2,10.00;Gadget,12,9.50", true, true] => "
+INVOICE VIP/DE
+  Widget x2 = 20,00
+  Gadget x12 = 108,30
+items=14 net=128,30 discount=12,83 shipping=0,00 tax=21,94 TOTAL=137,50"
+["VIP", "DE", "Server,1,900.00,25", false, false] => "
+INVOICE VIP/DE
+  Server x1 = 900,00
+items=1 net=900,00 shipping=29,90 tax=176,68 TOTAL=1106,58"
+["VIP", "DE", "Server,1,900.00,25", false, true] => "
+INVOICE VIP/DE
+  Server x1 = 900,00
+items=1 net=900,00 shipping=29,90 tax=176,68 TOTAL=1106,50"
+["VIP", "DE", "Server,1,900.00,25", true, false] => "
+INVOICE VIP/DE
+  Server x1 = 875,00
+items=1 net=875,00 discount=87,50 shipping=29,90 tax=155,31 TOTAL=972,71"
+["VIP", "DE", "Server,1,900.00,25", true, true] => "
+INVOICE VIP/DE
+  Server x1 = 875,00
+items=1 net=875,00 discount=87,50 shipping=29,90 tax=155,31 TOTAL=972,50"
+["VIP", "DE", "Bolt,100,12.00", false, false] => "
+INVOICE VIP/DE
+  Bolt x100 = 1200,00
+items=100 net=1200,00 shipping=0,00 tax=228,00 TOTAL=1428,00"
+["VIP", "DE", "Bolt,100,12.00", false, true] => "
+INVOICE VIP/DE
+  Bolt x100 = 1200,00
+items=100 net=1200,00 shipping=0,00 tax=228,00 TOTAL=1428,00"
+["VIP", "DE", "Bolt,100,12.00", true, false] => "
+INVOICE VIP/DE
+  Bolt x100 = 1115,00
+items=100 net=1115,00 discount=111,50 shipping=0,00 tax=190,67 TOTAL=1194,17"
+["VIP", "DE", "Bolt,100,12.00", true, true] => "
+INVOICE VIP/DE
+  Bolt x100 = 1115,00
+items=100 net=1115,00 discount=111,50 shipping=0,00 tax=190,67 TOTAL=1194,00"
+["VIP", "DE", "Pin,60,1.00", false, false] => "
+INVOICE VIP/DE
+  Pin x60 = 60,00
+items=60 net=60,00 shipping=9,90 tax=13,28 TOTAL=83,18"
+["VIP", "DE", "Pin,60,1.00", false, true] => "
+INVOICE VIP/DE
+  Pin x60 = 60,00
+items=60 net=60,00 shipping=9,90 tax=13,28 TOTAL=83,00"
+["VIP", "DE", "Pin,60,1.00", true, false] => "
+INVOICE VIP/DE
+  Pin x60 = 57,00
+items=60 net=57,00 discount=5,70 shipping=9,90 tax=11,63 TOTAL=72,83"
+["VIP", "DE", "Pin,60,1.00", true, true] => "
+INVOICE VIP/DE
+  Pin x60 = 57,00
+items=60 net=57,00 discount=5,70 shipping=9,90 tax=11,63 TOTAL=73,00"
+["VIP", "DE", "Thing,1,20000", false, false] => "
+INVOICE VIP/DE
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=3800,00 TOTAL=23800,00 [REVIEW]"
+["VIP", "DE", "Thing,1,20000", false, true] => "
+INVOICE VIP/DE
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=3800,00 TOTAL=23800,00 [REVIEW]"
+["VIP", "DE", "Thing,1,20000", true, false] => "
+INVOICE VIP/DE
+  Thing x1 = 19975,00
+items=1 net=19975,00 discount=1997,50 shipping=0,00 tax=3415,73 TOTAL=21393,23 [REVIEW]"
+["VIP", "DE", "Thing,1,20000", true, true] => "
+INVOICE VIP/DE
+  Thing x1 = 19975,00
+items=1 net=19975,00 discount=1997,50 shipping=0,00 tax=3415,73 TOTAL=21393,00 [REVIEW]"
+["VIP", "DE", "x,1,5;bad;y,abc,1;z,0,1,0", false, false] => "
+INVOICE VIP/DE
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=9,90 tax=2,83 TOTAL=17,73"
+["VIP", "DE", "x,1,5;bad;y,abc,1;z,0,1,0", false, true] => "
+INVOICE VIP/DE
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=9,90 tax=2,83 TOTAL=17,50"
+["VIP", "DE", "x,1,5;bad;y,abc,1;z,0,1,0", true, false] => "
+INVOICE VIP/DE
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 discount=0,50 shipping=9,90 tax=2,74 TOTAL=17,14"
+["VIP", "DE", "x,1,5;bad;y,abc,1;z,0,1,0", true, true] => "
+INVOICE VIP/DE
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 discount=0,50 shipping=9,90 tax=2,74 TOTAL=17,00"
+["VIP", "DE", "", false, false] => "
+ERROR: no lines"
+["VIP", "DE", "", false, true] => "
+ERROR: no lines"
+["VIP", "DE", "", true, false] => "
+ERROR: no lines"
+["VIP", "DE", "", true, true] => "
+ERROR: no lines"
+["VIP", "HU", "Widget,2,10.00", false, false] => "
+INVOICE VIP/HU
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=9,90 tax=8,07 TOTAL=37,97"
+["VIP", "HU", "Widget,2,10.00", false, true] => "
+INVOICE VIP/HU
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=9,90 tax=8,07 TOTAL=38,00"
+["VIP", "HU", "Widget,2,10.00", true, false] => "
+INVOICE VIP/HU
+  Widget x2 = 20,00
+items=2 net=20,00 discount=2,00 shipping=9,90 tax=7,53 TOTAL=35,43"
+["VIP", "HU", "Widget,2,10.00", true, true] => "
+INVOICE VIP/HU
+  Widget x2 = 20,00
+items=2 net=20,00 discount=2,00 shipping=9,90 tax=7,53 TOTAL=35,50"
+["VIP", "HU", "Widget,2,10.00;Gadget,12,9.50", false, false] => "
+INVOICE VIP/HU
+  Widget x2 = 20,00
+  Gadget x12 = 114,00
+items=14 net=134,00 shipping=0,00 tax=36,18 TOTAL=170,18"
+["VIP", "HU", "Widget,2,10.00;Gadget,12,9.50", false, true] => "
+INVOICE VIP/HU
+  Widget x2 = 20,00
+  Gadget x12 = 114,00
+items=14 net=134,00 shipping=0,00 tax=36,18 TOTAL=170,00"
+["VIP", "HU", "Widget,2,10.00;Gadget,12,9.50", true, false] => "
+INVOICE VIP/HU
+  Widget x2 = 20,00
+  Gadget x12 = 108,30
+items=14 net=128,30 discount=12,83 shipping=0,00 tax=31,18 TOTAL=146,65"
+["VIP", "HU", "Widget,2,10.00;Gadget,12,9.50", true, true] => "
+INVOICE VIP/HU
+  Widget x2 = 20,00
+  Gadget x12 = 108,30
+items=14 net=128,30 discount=12,83 shipping=0,00 tax=31,18 TOTAL=146,50"
+["VIP", "HU", "Server,1,900.00,25", false, false] => "
+INVOICE VIP/HU
+  Server x1 = 900,00
+items=1 net=900,00 shipping=29,90 tax=251,07 TOTAL=1180,97"
+["VIP", "HU", "Server,1,900.00,25", false, true] => "
+INVOICE VIP/HU
+  Server x1 = 900,00
+items=1 net=900,00 shipping=29,90 tax=251,07 TOTAL=1181,00"
+["VIP", "HU", "Server,1,900.00,25", true, false] => "
+INVOICE VIP/HU
+  Server x1 = 875,00
+items=1 net=875,00 discount=87,50 shipping=29,90 tax=220,70 TOTAL=1038,10"
+["VIP", "HU", "Server,1,900.00,25", true, true] => "
+INVOICE VIP/HU
+  Server x1 = 875,00
+items=1 net=875,00 discount=87,50 shipping=29,90 tax=220,70 TOTAL=1038,00"
+["VIP", "HU", "Bolt,100,12.00", false, false] => "
+INVOICE VIP/HU
+  Bolt x100 = 1200,00
+items=100 net=1200,00 shipping=0,00 tax=324,00 TOTAL=1524,00"
+["VIP", "HU", "Bolt,100,12.00", false, true] => "
+INVOICE VIP/HU
+  Bolt x100 = 1200,00
+items=100 net=1200,00 shipping=0,00 tax=324,00 TOTAL=1524,00"
+["VIP", "HU", "Bolt,100,12.00", true, false] => "
+INVOICE VIP/HU
+  Bolt x100 = 1115,00
+items=100 net=1115,00 discount=111,50 shipping=0,00 tax=270,95 TOTAL=1274,45"
+["VIP", "HU", "Bolt,100,12.00", true, true] => "
+INVOICE VIP/HU
+  Bolt x100 = 1115,00
+items=100 net=1115,00 discount=111,50 shipping=0,00 tax=270,95 TOTAL=1274,50"
+["VIP", "HU", "Pin,60,1.00", false, false] => "
+INVOICE VIP/HU
+  Pin x60 = 60,00
+items=60 net=60,00 shipping=9,90 tax=18,87 TOTAL=88,77"
+["VIP", "HU", "Pin,60,1.00", false, true] => "
+INVOICE VIP/HU
+  Pin x60 = 60,00
+items=60 net=60,00 shipping=9,90 tax=18,87 TOTAL=89,00"
+["VIP", "HU", "Pin,60,1.00", true, false] => "
+INVOICE VIP/HU
+  Pin x60 = 57,00
+items=60 net=57,00 discount=5,70 shipping=9,90 tax=16,52 TOTAL=77,72"
+["VIP", "HU", "Pin,60,1.00", true, true] => "
+INVOICE VIP/HU
+  Pin x60 = 57,00
+items=60 net=57,00 discount=5,70 shipping=9,90 tax=16,52 TOTAL=77,50"
+["VIP", "HU", "Thing,1,20000", false, false] => "
+INVOICE VIP/HU
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=5400,00 TOTAL=25400,00 [REVIEW]"
+["VIP", "HU", "Thing,1,20000", false, true] => "
+INVOICE VIP/HU
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=5400,00 TOTAL=25400,00 [REVIEW]"
+["VIP", "HU", "Thing,1,20000", true, false] => "
+INVOICE VIP/HU
+  Thing x1 = 19975,00
+items=1 net=19975,00 discount=1997,50 shipping=0,00 tax=4853,93 TOTAL=22831,43 [REVIEW]"
+["VIP", "HU", "Thing,1,20000", true, true] => "
+INVOICE VIP/HU
+  Thing x1 = 19975,00
+items=1 net=19975,00 discount=1997,50 shipping=0,00 tax=4853,93 TOTAL=22831,50 [REVIEW]"
+["VIP", "HU", "x,1,5;bad;y,abc,1;z,0,1,0", false, false] => "
+INVOICE VIP/HU
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=9,90 tax=4,02 TOTAL=18,92"
+["VIP", "HU", "x,1,5;bad;y,abc,1;z,0,1,0", false, true] => "
+INVOICE VIP/HU
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=9,90 tax=4,02 TOTAL=19,00"
+["VIP", "HU", "x,1,5;bad;y,abc,1;z,0,1,0", true, false] => "
+INVOICE VIP/HU
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 discount=0,50 shipping=9,90 tax=3,89 TOTAL=18,29"
+["VIP", "HU", "x,1,5;bad;y,abc,1;z,0,1,0", true, true] => "
+INVOICE VIP/HU
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 discount=0,50 shipping=9,90 tax=3,89 TOTAL=18,50"
+["VIP", "HU", "", false, false] => "
+ERROR: no lines"
+["VIP", "HU", "", false, true] => "
+ERROR: no lines"
+["VIP", "HU", "", true, false] => "
+ERROR: no lines"
+["VIP", "HU", "", true, true] => "
+ERROR: no lines"
+["VIP", "CH", "Widget,2,10.00", false, false] => "
+INVOICE VIP/CH
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=9,90 tax=2,42 TOTAL=32,32"
+["VIP", "CH", "Widget,2,10.00", false, true] => "
+INVOICE VIP/CH
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=9,90 tax=2,42 TOTAL=32,50"
+["VIP", "CH", "Widget,2,10.00", true, false] => "
+INVOICE VIP/CH
+  Widget x2 = 20,00
+items=2 net=20,00 discount=2,00 shipping=9,90 tax=2,26 TOTAL=30,16"
+["VIP", "CH", "Widget,2,10.00", true, true] => "
+INVOICE VIP/CH
+  Widget x2 = 20,00
+items=2 net=20,00 discount=2,00 shipping=9,90 tax=2,26 TOTAL=30,00"
+["VIP", "CH", "Widget,2,10.00;Gadget,12,9.50", false, false] => "
+INVOICE VIP/CH
+  Widget x2 = 20,00
+  Gadget x12 = 114,00
+items=14 net=134,00 shipping=0,00 tax=10,85 TOTAL=144,85"
+["VIP", "CH", "Widget,2,10.00;Gadget,12,9.50", false, true] => "
+INVOICE VIP/CH
+  Widget x2 = 20,00
+  Gadget x12 = 114,00
+items=14 net=134,00 shipping=0,00 tax=10,85 TOTAL=145,00"
+["VIP", "CH", "Widget,2,10.00;Gadget,12,9.50", true, false] => "
+INVOICE VIP/CH
+  Widget x2 = 20,00
+  Gadget x12 = 108,30
+items=14 net=128,30 discount=12,83 shipping=0,00 tax=9,35 TOTAL=124,82"
+["VIP", "CH", "Widget,2,10.00;Gadget,12,9.50", true, true] => "
+INVOICE VIP/CH
+  Widget x2 = 20,00
+  Gadget x12 = 108,30
+items=14 net=128,30 discount=12,83 shipping=0,00 tax=9,35 TOTAL=125,00"
+["VIP", "CH", "Server,1,900.00,25", false, false] => "
+INVOICE VIP/CH
+  Server x1 = 900,00
+items=1 net=900,00 shipping=29,90 tax=75,32 TOTAL=1005,22"
+["VIP", "CH", "Server,1,900.00,25", false, true] => "
+INVOICE VIP/CH
+  Server x1 = 900,00
+items=1 net=900,00 shipping=29,90 tax=75,32 TOTAL=1005,00"
+["VIP", "CH", "Server,1,900.00,25", true, false] => "
+INVOICE VIP/CH
+  Server x1 = 875,00
+items=1 net=875,00 discount=87,50 shipping=29,90 tax=66,21 TOTAL=883,61"
+["VIP", "CH", "Server,1,900.00,25", true, true] => "
+INVOICE VIP/CH
+  Server x1 = 875,00
+items=1 net=875,00 discount=87,50 shipping=29,90 tax=66,21 TOTAL=883,50"
+["VIP", "CH", "Bolt,100,12.00", false, false] => "
+INVOICE VIP/CH
+  Bolt x100 = 1200,00
+items=100 net=1200,00 shipping=0,00 tax=97,20 TOTAL=1297,20"
+["VIP", "CH", "Bolt,100,12.00", false, true] => "
+INVOICE VIP/CH
+  Bolt x100 = 1200,00
+items=100 net=1200,00 shipping=0,00 tax=97,20 TOTAL=1297,00"
+["VIP", "CH", "Bolt,100,12.00", true, false] => "
+INVOICE VIP/CH
+  Bolt x100 = 1115,00
+items=100 net=1115,00 discount=111,50 shipping=0,00 tax=81,28 TOTAL=1084,78"
+["VIP", "CH", "Bolt,100,12.00", true, true] => "
+INVOICE VIP/CH
+  Bolt x100 = 1115,00
+items=100 net=1115,00 discount=111,50 shipping=0,00 tax=81,28 TOTAL=1085,00"
+["VIP", "CH", "Pin,60,1.00", false, false] => "
+INVOICE VIP/CH
+  Pin x60 = 60,00
+items=60 net=60,00 shipping=9,90 tax=5,66 TOTAL=75,56"
+["VIP", "CH", "Pin,60,1.00", false, true] => "
+INVOICE VIP/CH
+  Pin x60 = 60,00
+items=60 net=60,00 shipping=9,90 tax=5,66 TOTAL=75,50"
+["VIP", "CH", "Pin,60,1.00", true, false] => "
+INVOICE VIP/CH
+  Pin x60 = 57,00
+items=60 net=57,00 discount=5,70 shipping=9,90 tax=4,96 TOTAL=66,16"
+["VIP", "CH", "Pin,60,1.00", true, true] => "
+INVOICE VIP/CH
+  Pin x60 = 57,00
+items=60 net=57,00 discount=5,70 shipping=9,90 tax=4,96 TOTAL=66,00"
+["VIP", "CH", "Thing,1,20000", false, false] => "
+INVOICE VIP/CH
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=1620,00 TOTAL=21620,00 [REVIEW]"
+["VIP", "CH", "Thing,1,20000", false, true] => "
+INVOICE VIP/CH
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=1620,00 TOTAL=21620,00 [REVIEW]"
+["VIP", "CH", "Thing,1,20000", true, false] => "
+INVOICE VIP/CH
+  Thing x1 = 19975,00
+items=1 net=19975,00 discount=1997,50 shipping=0,00 tax=1456,18 TOTAL=19433,68 [REVIEW]"
+["VIP", "CH", "Thing,1,20000", true, true] => "
+INVOICE VIP/CH
+  Thing x1 = 19975,00
+items=1 net=19975,00 discount=1997,50 shipping=0,00 tax=1456,18 TOTAL=19433,50 [REVIEW]"
+["VIP", "CH", "x,1,5;bad;y,abc,1;z,0,1,0", false, false] => "
+INVOICE VIP/CH
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=9,90 tax=1,21 TOTAL=16,11"
+["VIP", "CH", "x,1,5;bad;y,abc,1;z,0,1,0", false, true] => "
+INVOICE VIP/CH
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=9,90 tax=1,21 TOTAL=16,00"
+["VIP", "CH", "x,1,5;bad;y,abc,1;z,0,1,0", true, false] => "
+INVOICE VIP/CH
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 discount=0,50 shipping=9,90 tax=1,17 TOTAL=15,57"
+["VIP", "CH", "x,1,5;bad;y,abc,1;z,0,1,0", true, true] => "
+INVOICE VIP/CH
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 discount=0,50 shipping=9,90 tax=1,17 TOTAL=15,50"
+["VIP", "CH", "", false, false] => "
+ERROR: no lines"
+["VIP", "CH", "", false, true] => "
+ERROR: no lines"
+["VIP", "CH", "", true, false] => "
+ERROR: no lines"
+["VIP", "CH", "", true, true] => "
+ERROR: no lines"
+["VIP", "FR", "Widget,2,10.00", false, false] => "
+INVOICE VIP/FR
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=9,90 tax=5,98 TOTAL=35,88"
+["VIP", "FR", "Widget,2,10.00", false, true] => "
+INVOICE VIP/FR
+  Widget x2 = 20,00
+items=2 net=20,00 shipping=9,90 tax=5,98 TOTAL=36,00"
+["VIP", "FR", "Widget,2,10.00", true, false] => "
+INVOICE VIP/FR
+  Widget x2 = 20,00
+items=2 net=20,00 discount=2,00 shipping=9,90 tax=5,58 TOTAL=33,48"
+["VIP", "FR", "Widget,2,10.00", true, true] => "
+INVOICE VIP/FR
+  Widget x2 = 20,00
+items=2 net=20,00 discount=2,00 shipping=9,90 tax=5,58 TOTAL=33,50"
+["VIP", "FR", "Widget,2,10.00;Gadget,12,9.50", false, false] => "
+INVOICE VIP/FR
+  Widget x2 = 20,00
+  Gadget x12 = 114,00
+items=14 net=134,00 shipping=0,00 tax=26,80 TOTAL=160,80"
+["VIP", "FR", "Widget,2,10.00;Gadget,12,9.50", false, true] => "
+INVOICE VIP/FR
+  Widget x2 = 20,00
+  Gadget x12 = 114,00
+items=14 net=134,00 shipping=0,00 tax=26,80 TOTAL=161,00"
+["VIP", "FR", "Widget,2,10.00;Gadget,12,9.50", true, false] => "
+INVOICE VIP/FR
+  Widget x2 = 20,00
+  Gadget x12 = 108,30
+items=14 net=128,30 discount=12,83 shipping=0,00 tax=23,09 TOTAL=138,56"
+["VIP", "FR", "Widget,2,10.00;Gadget,12,9.50", true, true] => "
+INVOICE VIP/FR
+  Widget x2 = 20,00
+  Gadget x12 = 108,30
+items=14 net=128,30 discount=12,83 shipping=0,00 tax=23,09 TOTAL=138,50"
+["VIP", "FR", "Server,1,900.00,25", false, false] => "
+INVOICE VIP/FR
+  Server x1 = 900,00
+items=1 net=900,00 shipping=29,90 tax=185,98 TOTAL=1115,88"
+["VIP", "FR", "Server,1,900.00,25", false, true] => "
+INVOICE VIP/FR
+  Server x1 = 900,00
+items=1 net=900,00 shipping=29,90 tax=185,98 TOTAL=1116,00"
+["VIP", "FR", "Server,1,900.00,25", true, false] => "
+INVOICE VIP/FR
+  Server x1 = 875,00
+items=1 net=875,00 discount=87,50 shipping=29,90 tax=163,48 TOTAL=980,88"
+["VIP", "FR", "Server,1,900.00,25", true, true] => "
+INVOICE VIP/FR
+  Server x1 = 875,00
+items=1 net=875,00 discount=87,50 shipping=29,90 tax=163,48 TOTAL=981,00"
+["VIP", "FR", "Bolt,100,12.00", false, false] => "
+INVOICE VIP/FR
+  Bolt x100 = 1200,00
+items=100 net=1200,00 shipping=0,00 tax=240,00 TOTAL=1440,00"
+["VIP", "FR", "Bolt,100,12.00", false, true] => "
+INVOICE VIP/FR
+  Bolt x100 = 1200,00
+items=100 net=1200,00 shipping=0,00 tax=240,00 TOTAL=1440,00"
+["VIP", "FR", "Bolt,100,12.00", true, false] => "
+INVOICE VIP/FR
+  Bolt x100 = 1115,00
+items=100 net=1115,00 discount=111,50 shipping=0,00 tax=200,70 TOTAL=1204,20"
+["VIP", "FR", "Bolt,100,12.00", true, true] => "
+INVOICE VIP/FR
+  Bolt x100 = 1115,00
+items=100 net=1115,00 discount=111,50 shipping=0,00 tax=200,70 TOTAL=1204,00"
+["VIP", "FR", "Pin,60,1.00", false, false] => "
+INVOICE VIP/FR
+  Pin x60 = 60,00
+items=60 net=60,00 shipping=9,90 tax=13,98 TOTAL=83,88"
+["VIP", "FR", "Pin,60,1.00", false, true] => "
+INVOICE VIP/FR
+  Pin x60 = 60,00
+items=60 net=60,00 shipping=9,90 tax=13,98 TOTAL=84,00"
+["VIP", "FR", "Pin,60,1.00", true, false] => "
+INVOICE VIP/FR
+  Pin x60 = 57,00
+items=60 net=57,00 discount=5,70 shipping=9,90 tax=12,24 TOTAL=73,44"
+["VIP", "FR", "Pin,60,1.00", true, true] => "
+INVOICE VIP/FR
+  Pin x60 = 57,00
+items=60 net=57,00 discount=5,70 shipping=9,90 tax=12,24 TOTAL=73,50"
+["VIP", "FR", "Thing,1,20000", false, false] => "
+INVOICE VIP/FR
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=4000,00 TOTAL=24000,00 [REVIEW]"
+["VIP", "FR", "Thing,1,20000", false, true] => "
+INVOICE VIP/FR
+  Thing x1 = 20000,00
+items=1 net=20000,00 shipping=0,00 tax=4000,00 TOTAL=24000,00 [REVIEW]"
+["VIP", "FR", "Thing,1,20000", true, false] => "
+INVOICE VIP/FR
+  Thing x1 = 19975,00
+items=1 net=19975,00 discount=1997,50 shipping=0,00 tax=3595,50 TOTAL=21573,00 [REVIEW]"
+["VIP", "FR", "Thing,1,20000", true, true] => "
+INVOICE VIP/FR
+  Thing x1 = 19975,00
+items=1 net=19975,00 discount=1997,50 shipping=0,00 tax=3595,50 TOTAL=21573,00 [REVIEW]"
+["VIP", "FR", "x,1,5;bad;y,abc,1;z,0,1,0", false, false] => "
+INVOICE VIP/FR
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=9,90 tax=2,98 TOTAL=17,88"
+["VIP", "FR", "x,1,5;bad;y,abc,1;z,0,1,0", false, true] => "
+INVOICE VIP/FR
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 shipping=9,90 tax=2,98 TOTAL=18,00"
+["VIP", "FR", "x,1,5;bad;y,abc,1;z,0,1,0", true, false] => "
+INVOICE VIP/FR
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 discount=0,50 shipping=9,90 tax=2,88 TOTAL=17,28"
+["VIP", "FR", "x,1,5;bad;y,abc,1;z,0,1,0", true, true] => "
+INVOICE VIP/FR
+  x x1 = 5,00
+  line 2: skipped (needs name,qty,price[,kg])
+  line 3: skipped (not a number)
+  line 4: skipped (negative or zero)
+items=1 skipped=3 net=5,00 discount=0,50 shipping=9,90 tax=2,88 TOTAL=17,50"
+["VIP", "FR", "", false, false] => "
+ERROR: no lines"
+["VIP", "FR", "", false, true] => "
+ERROR: no lines"
+["VIP", "FR", "", true, false] => "
+ERROR: no lines"
+["VIP", "FR", "", true, true] => "
+ERROR: no lines"
+["VIP", "", "Widget,2,10.00", false, false] => "
+ERROR: country missing"
+["VIP", "", "Widget,2,10.00", false, true] => "
+ERROR: country missing"
+["VIP", "", "Widget,2,10.00", true, false] => "
+ERROR: country missing"
+["VIP", "", "Widget,2,10.00", true, true] => "
+ERROR: country missing"
+["VIP", "", "Widget,2,10.00;Gadget,12,9.50", false, false] => "
+ERROR: country missing"
+["VIP", "", "Widget,2,10.00;Gadget,12,9.50", false, true] => "
+ERROR: country missing"
+["VIP", "", "Widget,2,10.00;Gadget,12,9.50", true, false] => "
+ERROR: country missing"
+["VIP", "", "Widget,2,10.00;Gadget,12,9.50", true, true] => "
+ERROR: country missing"
+["VIP", "", "Server,1,900.00,25", false, false] => "
+ERROR: country missing"
+["VIP", "", "Server,1,900.00,25", false, true] => "
+ERROR: country missing"
+["VIP", "", "Server,1,900.00,25", true, false] => "
+ERROR: country missing"
+["VIP", "", "Server,1,900.00,25", true, true] => "
+ERROR: country missing"
+["VIP", "", "Bolt,100,12.00", false, false] => "
+ERROR: country missing"
+["VIP", "", "Bolt,100,12.00", false, true] => "
+ERROR: country missing"
+["VIP", "", "Bolt,100,12.00", true, false] => "
+ERROR: country missing"
+["VIP", "", "Bolt,100,12.00", true, true] => "
+ERROR: country missing"
+["VIP", "", "Pin,60,1.00", false, false] => "
+ERROR: country missing"
+["VIP", "", "Pin,60,1.00", false, true] => "
+ERROR: country missing"
+["VIP", "", "Pin,60,1.00", true, false] => "
+ERROR: country missing"
+["VIP", "", "Pin,60,1.00", true, true] => "
+ERROR: country missing"
+["VIP", "", "Thing,1,20000", false, false] => "
+ERROR: country missing"
+["VIP", "", "Thing,1,20000", false, true] => "
+ERROR: country missing"
+["VIP", "", "Thing,1,20000", true, false] => "
+ERROR: country missing"
+["VIP", "", "Thing,1,20000", true, true] => "
+ERROR: country missing"
+["VIP", "", "x,1,5;bad;y,abc,1;z,0,1,0", false, false] => "
+ERROR: country missing"
+["VIP", "", "x,1,5;bad;y,abc,1;z,0,1,0", false, true] => "
+ERROR: country missing"
+["VIP", "", "x,1,5;bad;y,abc,1;z,0,1,0", true, false] => "
+ERROR: country missing"
+["VIP", "", "x,1,5;bad;y,abc,1;z,0,1,0", true, true] => "
+ERROR: country missing"
+["VIP", "", "", false, false] => "
+ERROR: country missing"
+["VIP", "", "", false, true] => "
+ERROR: country missing"
+["VIP", "", "", true, false] => "
+ERROR: country missing"
+["VIP", "", "", true, true] => "
+ERROR: country missing"
+["gold", "SK", "Widget,2,10.00", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "SK", "Widget,2,10.00", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "SK", "Widget,2,10.00", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "SK", "Widget,2,10.00", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "SK", "Widget,2,10.00;Gadget,12,9.50", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "SK", "Widget,2,10.00;Gadget,12,9.50", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "SK", "Widget,2,10.00;Gadget,12,9.50", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "SK", "Widget,2,10.00;Gadget,12,9.50", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "SK", "Server,1,900.00,25", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "SK", "Server,1,900.00,25", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "SK", "Server,1,900.00,25", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "SK", "Server,1,900.00,25", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "SK", "Bolt,100,12.00", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "SK", "Bolt,100,12.00", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "SK", "Bolt,100,12.00", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "SK", "Bolt,100,12.00", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "SK", "Pin,60,1.00", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "SK", "Pin,60,1.00", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "SK", "Pin,60,1.00", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "SK", "Pin,60,1.00", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "SK", "Thing,1,20000", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "SK", "Thing,1,20000", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "SK", "Thing,1,20000", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "SK", "Thing,1,20000", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "SK", "x,1,5;bad;y,abc,1;z,0,1,0", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "SK", "x,1,5;bad;y,abc,1;z,0,1,0", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "SK", "x,1,5;bad;y,abc,1;z,0,1,0", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "SK", "x,1,5;bad;y,abc,1;z,0,1,0", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "SK", "", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "SK", "", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "SK", "", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "SK", "", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "Widget,2,10.00", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "Widget,2,10.00", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "Widget,2,10.00", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "Widget,2,10.00", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "Widget,2,10.00;Gadget,12,9.50", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "Widget,2,10.00;Gadget,12,9.50", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "Widget,2,10.00;Gadget,12,9.50", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "Widget,2,10.00;Gadget,12,9.50", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "Server,1,900.00,25", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "Server,1,900.00,25", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "Server,1,900.00,25", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "Server,1,900.00,25", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "Bolt,100,12.00", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "Bolt,100,12.00", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "Bolt,100,12.00", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "Bolt,100,12.00", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "Pin,60,1.00", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "Pin,60,1.00", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "Pin,60,1.00", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "Pin,60,1.00", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "Thing,1,20000", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "Thing,1,20000", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "Thing,1,20000", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "Thing,1,20000", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "x,1,5;bad;y,abc,1;z,0,1,0", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "x,1,5;bad;y,abc,1;z,0,1,0", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "x,1,5;bad;y,abc,1;z,0,1,0", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "x,1,5;bad;y,abc,1;z,0,1,0", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "DE", "", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "Widget,2,10.00", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "Widget,2,10.00", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "Widget,2,10.00", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "Widget,2,10.00", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "Widget,2,10.00;Gadget,12,9.50", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "Widget,2,10.00;Gadget,12,9.50", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "Widget,2,10.00;Gadget,12,9.50", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "Widget,2,10.00;Gadget,12,9.50", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "Server,1,900.00,25", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "Server,1,900.00,25", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "Server,1,900.00,25", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "Server,1,900.00,25", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "Bolt,100,12.00", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "Bolt,100,12.00", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "Bolt,100,12.00", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "Bolt,100,12.00", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "Pin,60,1.00", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "Pin,60,1.00", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "Pin,60,1.00", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "Pin,60,1.00", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "Thing,1,20000", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "Thing,1,20000", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "Thing,1,20000", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "Thing,1,20000", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "x,1,5;bad;y,abc,1;z,0,1,0", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "x,1,5;bad;y,abc,1;z,0,1,0", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "x,1,5;bad;y,abc,1;z,0,1,0", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "x,1,5;bad;y,abc,1;z,0,1,0", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "HU", "", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "Widget,2,10.00", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "Widget,2,10.00", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "Widget,2,10.00", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "Widget,2,10.00", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "Widget,2,10.00;Gadget,12,9.50", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "Widget,2,10.00;Gadget,12,9.50", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "Widget,2,10.00;Gadget,12,9.50", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "Widget,2,10.00;Gadget,12,9.50", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "Server,1,900.00,25", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "Server,1,900.00,25", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "Server,1,900.00,25", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "Server,1,900.00,25", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "Bolt,100,12.00", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "Bolt,100,12.00", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "Bolt,100,12.00", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "Bolt,100,12.00", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "Pin,60,1.00", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "Pin,60,1.00", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "Pin,60,1.00", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "Pin,60,1.00", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "Thing,1,20000", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "Thing,1,20000", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "Thing,1,20000", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "Thing,1,20000", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "x,1,5;bad;y,abc,1;z,0,1,0", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "x,1,5;bad;y,abc,1;z,0,1,0", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "x,1,5;bad;y,abc,1;z,0,1,0", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "x,1,5;bad;y,abc,1;z,0,1,0", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "CH", "", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "Widget,2,10.00", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "Widget,2,10.00", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "Widget,2,10.00", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "Widget,2,10.00", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "Widget,2,10.00;Gadget,12,9.50", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "Widget,2,10.00;Gadget,12,9.50", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "Widget,2,10.00;Gadget,12,9.50", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "Widget,2,10.00;Gadget,12,9.50", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "Server,1,900.00,25", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "Server,1,900.00,25", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "Server,1,900.00,25", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "Server,1,900.00,25", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "Bolt,100,12.00", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "Bolt,100,12.00", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "Bolt,100,12.00", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "Bolt,100,12.00", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "Pin,60,1.00", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "Pin,60,1.00", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "Pin,60,1.00", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "Pin,60,1.00", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "Thing,1,20000", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "Thing,1,20000", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "Thing,1,20000", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "Thing,1,20000", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "x,1,5;bad;y,abc,1;z,0,1,0", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "x,1,5;bad;y,abc,1;z,0,1,0", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "x,1,5;bad;y,abc,1;z,0,1,0", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "x,1,5;bad;y,abc,1;z,0,1,0", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "FR", "", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "Widget,2,10.00", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "Widget,2,10.00", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "Widget,2,10.00", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "Widget,2,10.00", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "Widget,2,10.00;Gadget,12,9.50", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "Widget,2,10.00;Gadget,12,9.50", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "Widget,2,10.00;Gadget,12,9.50", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "Widget,2,10.00;Gadget,12,9.50", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "Server,1,900.00,25", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "Server,1,900.00,25", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "Server,1,900.00,25", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "Server,1,900.00,25", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "Bolt,100,12.00", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "Bolt,100,12.00", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "Bolt,100,12.00", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "Bolt,100,12.00", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "Pin,60,1.00", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "Pin,60,1.00", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "Pin,60,1.00", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "Pin,60,1.00", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "Thing,1,20000", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "Thing,1,20000", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "Thing,1,20000", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "Thing,1,20000", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "x,1,5;bad;y,abc,1;z,0,1,0", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "x,1,5;bad;y,abc,1;z,0,1,0", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "x,1,5;bad;y,abc,1;z,0,1,0", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "x,1,5;bad;y,abc,1;z,0,1,0", true, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "", false, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "", false, true] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "", true, false] => "
+ERROR: unknown customer type GOLD"
+["gold", "", "", true, true] => "
+ERROR: unknown customer type GOLD"
+["", "SK", "Widget,2,10.00", false, false] => "
+ERROR: unknown customer type "
+["", "SK", "Widget,2,10.00", false, true] => "
+ERROR: unknown customer type "
+["", "SK", "Widget,2,10.00", true, false] => "
+ERROR: unknown customer type "
+["", "SK", "Widget,2,10.00", true, true] => "
+ERROR: unknown customer type "
+["", "SK", "Widget,2,10.00;Gadget,12,9.50", false, false] => "
+ERROR: unknown customer type "
+["", "SK", "Widget,2,10.00;Gadget,12,9.50", false, true] => "
+ERROR: unknown customer type "
+["", "SK", "Widget,2,10.00;Gadget,12,9.50", true, false] => "
+ERROR: unknown customer type "
+["", "SK", "Widget,2,10.00;Gadget,12,9.50", true, true] => "
+ERROR: unknown customer type "
+["", "SK", "Server,1,900.00,25", false, false] => "
+ERROR: unknown customer type "
+["", "SK", "Server,1,900.00,25", false, true] => "
+ERROR: unknown customer type "
+["", "SK", "Server,1,900.00,25", true, false] => "
+ERROR: unknown customer type "
+["", "SK", "Server,1,900.00,25", true, true] => "
+ERROR: unknown customer type "
+["", "SK", "Bolt,100,12.00", false, false] => "
+ERROR: unknown customer type "
+["", "SK", "Bolt,100,12.00", false, true] => "
+ERROR: unknown customer type "
+["", "SK", "Bolt,100,12.00", true, false] => "
+ERROR: unknown customer type "
+["", "SK", "Bolt,100,12.00", true, true] => "
+ERROR: unknown customer type "
+["", "SK", "Pin,60,1.00", false, false] => "
+ERROR: unknown customer type "
+["", "SK", "Pin,60,1.00", false, true] => "
+ERROR: unknown customer type "
+["", "SK", "Pin,60,1.00", true, false] => "
+ERROR: unknown customer type "
+["", "SK", "Pin,60,1.00", true, true] => "
+ERROR: unknown customer type "
+["", "SK", "Thing,1,20000", false, false] => "
+ERROR: unknown customer type "
+["", "SK", "Thing,1,20000", false, true] => "
+ERROR: unknown customer type "
+["", "SK", "Thing,1,20000", true, false] => "
+ERROR: unknown customer type "
+["", "SK", "Thing,1,20000", true, true] => "
+ERROR: unknown customer type "
+["", "SK", "x,1,5;bad;y,abc,1;z,0,1,0", false, false] => "
+ERROR: unknown customer type "
+["", "SK", "x,1,5;bad;y,abc,1;z,0,1,0", false, true] => "
+ERROR: unknown customer type "
+["", "SK", "x,1,5;bad;y,abc,1;z,0,1,0", true, false] => "
+ERROR: unknown customer type "
+["", "SK", "x,1,5;bad;y,abc,1;z,0,1,0", true, true] => "
+ERROR: unknown customer type "
+["", "SK", "", false, false] => "
+ERROR: unknown customer type "
+["", "SK", "", false, true] => "
+ERROR: unknown customer type "
+["", "SK", "", true, false] => "
+ERROR: unknown customer type "
+["", "SK", "", true, true] => "
+ERROR: unknown customer type "
+["", "DE", "Widget,2,10.00", false, false] => "
+ERROR: unknown customer type "
+["", "DE", "Widget,2,10.00", false, true] => "
+ERROR: unknown customer type "
+["", "DE", "Widget,2,10.00", true, false] => "
+ERROR: unknown customer type "
+["", "DE", "Widget,2,10.00", true, true] => "
+ERROR: unknown customer type "
+["", "DE", "Widget,2,10.00;Gadget,12,9.50", false, false] => "
+ERROR: unknown customer type "
+["", "DE", "Widget,2,10.00;Gadget,12,9.50", false, true] => "
+ERROR: unknown customer type "
+["", "DE", "Widget,2,10.00;Gadget,12,9.50", true, false] => "
+ERROR: unknown customer type "
+["", "DE", "Widget,2,10.00;Gadget,12,9.50", true, true] => "
+ERROR: unknown customer type "
+["", "DE", "Server,1,900.00,25", false, false] => "
+ERROR: unknown customer type "
+["", "DE", "Server,1,900.00,25", false, true] => "
+ERROR: unknown customer type "
+["", "DE", "Server,1,900.00,25", true, false] => "
+ERROR: unknown customer type "
+["", "DE", "Server,1,900.00,25", true, true] => "
+ERROR: unknown customer type "
+["", "DE", "Bolt,100,12.00", false, false] => "
+ERROR: unknown customer type "
+["", "DE", "Bolt,100,12.00", false, true] => "
+ERROR: unknown customer type "
+["", "DE", "Bolt,100,12.00", true, false] => "
+ERROR: unknown customer type "
+["", "DE", "Bolt,100,12.00", true, true] => "
+ERROR: unknown customer type "
+["", "DE", "Pin,60,1.00", false, false] => "
+ERROR: unknown customer type "
+["", "DE", "Pin,60,1.00", false, true] => "
+ERROR: unknown customer type "
+["", "DE", "Pin,60,1.00", true, false] => "
+ERROR: unknown customer type "
+["", "DE", "Pin,60,1.00", true, true] => "
+ERROR: unknown customer type "
+["", "DE", "Thing,1,20000", false, false] => "
+ERROR: unknown customer type "
+["", "DE", "Thing,1,20000", false, true] => "
+ERROR: unknown customer type "
+["", "DE", "Thing,1,20000", true, false] => "
+ERROR: unknown customer type "
+["", "DE", "Thing,1,20000", true, true] => "
+ERROR: unknown customer type "
+["", "DE", "x,1,5;bad;y,abc,1;z,0,1,0", false, false] => "
+ERROR: unknown customer type "
+["", "DE", "x,1,5;bad;y,abc,1;z,0,1,0", false, true] => "
+ERROR: unknown customer type "
+["", "DE", "x,1,5;bad;y,abc,1;z,0,1,0", true, false] => "
+ERROR: unknown customer type "
+["", "DE", "x,1,5;bad;y,abc,1;z,0,1,0", true, true] => "
+ERROR: unknown customer type "
+["", "DE", "", false, false] => "
+ERROR: unknown customer type "
+["", "DE", "", false, true] => "
+ERROR: unknown customer type "
+["", "DE", "", true, false] => "
+ERROR: unknown customer type "
+["", "DE", "", true, true] => "
+ERROR: unknown customer type "
+["", "HU", "Widget,2,10.00", false, false] => "
+ERROR: unknown customer type "
+["", "HU", "Widget,2,10.00", false, true] => "
+ERROR: unknown customer type "
+["", "HU", "Widget,2,10.00", true, false] => "
+ERROR: unknown customer type "
+["", "HU", "Widget,2,10.00", true, true] => "
+ERROR: unknown customer type "
+["", "HU", "Widget,2,10.00;Gadget,12,9.50", false, false] => "
+ERROR: unknown customer type "
+["", "HU", "Widget,2,10.00;Gadget,12,9.50", false, true] => "
+ERROR: unknown customer type "
+["", "HU", "Widget,2,10.00;Gadget,12,9.50", true, false] => "
+ERROR: unknown customer type "
+["", "HU", "Widget,2,10.00;Gadget,12,9.50", true, true] => "
+ERROR: unknown customer type "
+["", "HU", "Server,1,900.00,25", false, false] => "
+ERROR: unknown customer type "
+["", "HU", "Server,1,900.00,25", false, true] => "
+ERROR: unknown customer type "
+["", "HU", "Server,1,900.00,25", true, false] => "
+ERROR: unknown customer type "
+["", "HU", "Server,1,900.00,25", true, true] => "
+ERROR: unknown customer type "
+["", "HU", "Bolt,100,12.00", false, false] => "
+ERROR: unknown customer type "
+["", "HU", "Bolt,100,12.00", false, true] => "
+ERROR: unknown customer type "
+["", "HU", "Bolt,100,12.00", true, false] => "
+ERROR: unknown customer type "
+["", "HU", "Bolt,100,12.00", true, true] => "
+ERROR: unknown customer type "
+["", "HU", "Pin,60,1.00", false, false] => "
+ERROR: unknown customer type "
+["", "HU", "Pin,60,1.00", false, true] => "
+ERROR: unknown customer type "
+["", "HU", "Pin,60,1.00", true, false] => "
+ERROR: unknown customer type "
+["", "HU", "Pin,60,1.00", true, true] => "
+ERROR: unknown customer type "
+["", "HU", "Thing,1,20000", false, false] => "
+ERROR: unknown customer type "
+["", "HU", "Thing,1,20000", false, true] => "
+ERROR: unknown customer type "
+["", "HU", "Thing,1,20000", true, false] => "
+ERROR: unknown customer type "
+["", "HU", "Thing,1,20000", true, true] => "
+ERROR: unknown customer type "
+["", "HU", "x,1,5;bad;y,abc,1;z,0,1,0", false, false] => "
+ERROR: unknown customer type "
+["", "HU", "x,1,5;bad;y,abc,1;z,0,1,0", false, true] => "
+ERROR: unknown customer type "
+["", "HU", "x,1,5;bad;y,abc,1;z,0,1,0", true, false] => "
+ERROR: unknown customer type "
+["", "HU", "x,1,5;bad;y,abc,1;z,0,1,0", true, true] => "
+ERROR: unknown customer type "
+["", "HU", "", false, false] => "
+ERROR: unknown customer type "
+["", "HU", "", false, true] => "
+ERROR: unknown customer type "
+["", "HU", "", true, false] => "
+ERROR: unknown customer type "
+["", "HU", "", true, true] => "
+ERROR: unknown customer type "
+["", "CH", "Widget,2,10.00", false, false] => "
+ERROR: unknown customer type "
+["", "CH", "Widget,2,10.00", false, true] => "
+ERROR: unknown customer type "
+["", "CH", "Widget,2,10.00", true, false] => "
+ERROR: unknown customer type "
+["", "CH", "Widget,2,10.00", true, true] => "
+ERROR: unknown customer type "
+["", "CH", "Widget,2,10.00;Gadget,12,9.50", false, false] => "
+ERROR: unknown customer type "
+["", "CH", "Widget,2,10.00;Gadget,12,9.50", false, true] => "
+ERROR: unknown customer type "
+["", "CH", "Widget,2,10.00;Gadget,12,9.50", true, false] => "
+ERROR: unknown customer type "
+["", "CH", "Widget,2,10.00;Gadget,12,9.50", true, true] => "
+ERROR: unknown customer type "
+["", "CH", "Server,1,900.00,25", false, false] => "
+ERROR: unknown customer type "
+["", "CH", "Server,1,900.00,25", false, true] => "
+ERROR: unknown customer type "
+["", "CH", "Server,1,900.00,25", true, false] => "
+ERROR: unknown customer type "
+["", "CH", "Server,1,900.00,25", true, true] => "
+ERROR: unknown customer type "
+["", "CH", "Bolt,100,12.00", false, false] => "
+ERROR: unknown customer type "
+["", "CH", "Bolt,100,12.00", false, true] => "
+ERROR: unknown customer type "
+["", "CH", "Bolt,100,12.00", true, false] => "
+ERROR: unknown customer type "
+["", "CH", "Bolt,100,12.00", true, true] => "
+ERROR: unknown customer type "
+["", "CH", "Pin,60,1.00", false, false] => "
+ERROR: unknown customer type "
+["", "CH", "Pin,60,1.00", false, true] => "
+ERROR: unknown customer type "
+["", "CH", "Pin,60,1.00", true, false] => "
+ERROR: unknown customer type "
+["", "CH", "Pin,60,1.00", true, true] => "
+ERROR: unknown customer type "
+["", "CH", "Thing,1,20000", false, false] => "
+ERROR: unknown customer type "
+["", "CH", "Thing,1,20000", false, true] => "
+ERROR: unknown customer type "
+["", "CH", "Thing,1,20000", true, false] => "
+ERROR: unknown customer type "
+["", "CH", "Thing,1,20000", true, true] => "
+ERROR: unknown customer type "
+["", "CH", "x,1,5;bad;y,abc,1;z,0,1,0", false, false] => "
+ERROR: unknown customer type "
+["", "CH", "x,1,5;bad;y,abc,1;z,0,1,0", false, true] => "
+ERROR: unknown customer type "
+["", "CH", "x,1,5;bad;y,abc,1;z,0,1,0", true, false] => "
+ERROR: unknown customer type "
+["", "CH", "x,1,5;bad;y,abc,1;z,0,1,0", true, true] => "
+ERROR: unknown customer type "
+["", "CH", "", false, false] => "
+ERROR: unknown customer type "
+["", "CH", "", false, true] => "
+ERROR: unknown customer type "
+["", "CH", "", true, false] => "
+ERROR: unknown customer type "
+["", "CH", "", true, true] => "
+ERROR: unknown customer type "
+["", "FR", "Widget,2,10.00", false, false] => "
+ERROR: unknown customer type "
+["", "FR", "Widget,2,10.00", false, true] => "
+ERROR: unknown customer type "
+["", "FR", "Widget,2,10.00", true, false] => "
+ERROR: unknown customer type "
+["", "FR", "Widget,2,10.00", true, true] => "
+ERROR: unknown customer type "
+["", "FR", "Widget,2,10.00;Gadget,12,9.50", false, false] => "
+ERROR: unknown customer type "
+["", "FR", "Widget,2,10.00;Gadget,12,9.50", false, true] => "
+ERROR: unknown customer type "
+["", "FR", "Widget,2,10.00;Gadget,12,9.50", true, false] => "
+ERROR: unknown customer type "
+["", "FR", "Widget,2,10.00;Gadget,12,9.50", true, true] => "
+ERROR: unknown customer type "
+["", "FR", "Server,1,900.00,25", false, false] => "
+ERROR: unknown customer type "
+["", "FR", "Server,1,900.00,25", false, true] => "
+ERROR: unknown customer type "
+["", "FR", "Server,1,900.00,25", true, false] => "
+ERROR: unknown customer type "
+["", "FR", "Server,1,900.00,25", true, true] => "
+ERROR: unknown customer type "
+["", "FR", "Bolt,100,12.00", false, false] => "
+ERROR: unknown customer type "
+["", "FR", "Bolt,100,12.00", false, true] => "
+ERROR: unknown customer type "
+["", "FR", "Bolt,100,12.00", true, false] => "
+ERROR: unknown customer type "
+["", "FR", "Bolt,100,12.00", true, true] => "
+ERROR: unknown customer type "
+["", "FR", "Pin,60,1.00", false, false] => "
+ERROR: unknown customer type "
+["", "FR", "Pin,60,1.00", false, true] => "
+ERROR: unknown customer type "
+["", "FR", "Pin,60,1.00", true, false] => "
+ERROR: unknown customer type "
+["", "FR", "Pin,60,1.00", true, true] => "
+ERROR: unknown customer type "
+["", "FR", "Thing,1,20000", false, false] => "
+ERROR: unknown customer type "
+["", "FR", "Thing,1,20000", false, true] => "
+ERROR: unknown customer type "
+["", "FR", "Thing,1,20000", true, false] => "
+ERROR: unknown customer type "
+["", "FR", "Thing,1,20000", true, true] => "
+ERROR: unknown customer type "
+["", "FR", "x,1,5;bad;y,abc,1;z,0,1,0", false, false] => "
+ERROR: unknown customer type "
+["", "FR", "x,1,5;bad;y,abc,1;z,0,1,0", false, true] => "
+ERROR: unknown customer type "
+["", "FR", "x,1,5;bad;y,abc,1;z,0,1,0", true, false] => "
+ERROR: unknown customer type "
+["", "FR", "x,1,5;bad;y,abc,1;z,0,1,0", true, true] => "
+ERROR: unknown customer type "
+["", "FR", "", false, false] => "
+ERROR: unknown customer type "
+["", "FR", "", false, true] => "
+ERROR: unknown customer type "
+["", "FR", "", true, false] => "
+ERROR: unknown customer type "
+["", "FR", "", true, true] => "
+ERROR: unknown customer type "
+["", "", "Widget,2,10.00", false, false] => "
+ERROR: unknown customer type "
+["", "", "Widget,2,10.00", false, true] => "
+ERROR: unknown customer type "
+["", "", "Widget,2,10.00", true, false] => "
+ERROR: unknown customer type "
+["", "", "Widget,2,10.00", true, true] => "
+ERROR: unknown customer type "
+["", "", "Widget,2,10.00;Gadget,12,9.50", false, false] => "
+ERROR: unknown customer type "
+["", "", "Widget,2,10.00;Gadget,12,9.50", false, true] => "
+ERROR: unknown customer type "
+["", "", "Widget,2,10.00;Gadget,12,9.50", true, false] => "
+ERROR: unknown customer type "
+["", "", "Widget,2,10.00;Gadget,12,9.50", true, true] => "
+ERROR: unknown customer type "
+["", "", "Server,1,900.00,25", false, false] => "
+ERROR: unknown customer type "
+["", "", "Server,1,900.00,25", false, true] => "
+ERROR: unknown customer type "
+["", "", "Server,1,900.00,25", true, false] => "
+ERROR: unknown customer type "
+["", "", "Server,1,900.00,25", true, true] => "
+ERROR: unknown customer type "
+["", "", "Bolt,100,12.00", false, false] => "
+ERROR: unknown customer type "
+["", "", "Bolt,100,12.00", false, true] => "
+ERROR: unknown customer type "
+["", "", "Bolt,100,12.00", true, false] => "
+ERROR: unknown customer type "
+["", "", "Bolt,100,12.00", true, true] => "
+ERROR: unknown customer type "
+["", "", "Pin,60,1.00", false, false] => "
+ERROR: unknown customer type "
+["", "", "Pin,60,1.00", false, true] => "
+ERROR: unknown customer type "
+["", "", "Pin,60,1.00", true, false] => "
+ERROR: unknown customer type "
+["", "", "Pin,60,1.00", true, true] => "
+ERROR: unknown customer type "
+["", "", "Thing,1,20000", false, false] => "
+ERROR: unknown customer type "
+["", "", "Thing,1,20000", false, true] => "
+ERROR: unknown customer type "
+["", "", "Thing,1,20000", true, false] => "
+ERROR: unknown customer type "
+["", "", "Thing,1,20000", true, true] => "
+ERROR: unknown customer type "
+["", "", "x,1,5;bad;y,abc,1;z,0,1,0", false, false] => "
+ERROR: unknown customer type "
+["", "", "x,1,5;bad;y,abc,1;z,0,1,0", false, true] => "
+ERROR: unknown customer type "
+["", "", "x,1,5;bad;y,abc,1;z,0,1,0", true, false] => "
+ERROR: unknown customer type "
+["", "", "x,1,5;bad;y,abc,1;z,0,1,0", true, true] => "
+ERROR: unknown customer type "
+["", "", "", false, false] => "
+ERROR: unknown customer type "
+["", "", "", false, true] => "
+ERROR: unknown customer type "
+["", "", "", true, false] => "
+ERROR: unknown customer type "
+["", "", "", true, true] => "
+ERROR: unknown customer type "

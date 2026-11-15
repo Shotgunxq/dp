@@ -1,0 +1,7 @@
+[null] => "ERROR: no input"
+[""] => "ERROR: expected 3 parts, got 1"
+["|"] => "ERROR: expected 3 parts, got 2"
+["a|b"] => "ERROR: expected 3 parts, got 2"
+["a|b|c|d"] => "ERROR: expected 3 parts, got 4"
+["B2C|SK|;;"] => "ERROR: no valid lines (0 skipped)"
+["B2C|SK| , , "] => "ERROR: no valid lines (1 skipped)"

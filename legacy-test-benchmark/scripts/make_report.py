@@ -180,17 +180,26 @@ const METRICS = [
 const num = v => (v === "" || v == null || isNaN(+v)) ? null : +v;
 const truthy = v => String(v).toLowerCase() === "true";
 // Display names for the --tool values; anything else is shown as typed.
-const TOOL_NAMES = { reference: "Reference (hand-written)", "golden-master": "Golden master (ApprovalTests)",
+const TOOL_NAMES = { reference: "Reference (hand-written)", "golden-master": "Golden master",
   randoop: "Randoop", evosuite: "EvoSuite", kex: "Kex", utbot: "UnitTestBot", unittestbot: "UnitTestBot",
   llm: "LLM", none: "No tests" };
 const toolName = t => TOOL_NAMES[(t || "").toLowerCase()] || t;
-const seriesOf = r => [toolName(r.tool), r.model, r.prompt_version].filter(Boolean).join(" · ");
+// Short display name for a model id; the full id stays in the CSV. "hf.co/unsloth/Qwen3.6-35B-A3B-GGUF:UD-IQ4_XS"
+// becomes "Qwen3.6-35B-A3B (UD-IQ4_XS)", "Qwen3-Coder:latest" stays as it is.
+const modelName = m => {
+  if (!m) return "";
+  const hf = m.match(/^hf\.co\/[^/]+\/(.+?)(?:-GGUF)?(?::(.+))?$/i);
+  if (hf) return hf[1] + (hf[2] ? ` (${hf[2]})` : "");
+  return m;
+};
+const seriesOf = r => [toolName(r.tool), modelName(r.model), r.prompt_version].filter(Boolean).join(" · ");
 const runById = {};
 DATA.runs.forEach(r => { r.series = seriesOf(r); runById[r.run_id] = r; });
 DATA.classes.forEach(c => { const r = runById[c.run_id] || {}; c.series = r.series || c.tool;
   c.module = r.module || ""; c.simple = c.simple_name || c["class"].split(".").pop(); });
 // "settings" of a run: everything that should be identical between iterations of one tool
-const IGNORE_META = new Set(["generation_jdk", "generation_java", "failed_classes", "gen_time_s"]);
+const IGNORE_META = new Set(["generation_jdk", "generation_java", "failed_classes", "gen_time_s",
+  "classes_final_status", "repair_rounds_total", "tokens_in", "tokens_out", "model_digest"]);
 DATA.runs.forEach(r => {
   let m = {}; try { m = r.extra_meta ? JSON.parse(r.extra_meta) : {}; } catch (e) { m = {}; }
   const parts = []; if (r.budget_s) parts.push(`budget ${r.budget_s}s`);

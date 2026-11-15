@@ -1,0 +1,5 @@
+"id=1" room=true count=1
+"id=2" room=true count=2
+"id=3" room=false count=3
+EXCEPTION java.lang.IllegalStateException: category full: A room=false count=3
+EXCEPTION java.lang.IllegalStateException: category full: A room=false count=3

@@ -1,7 +1,0 @@
-tool=golden-master
-model=combinations-v1
-input_rule=typical domain values + simple edge values, chosen without branch analysis
-approved_files=21
-approved_lines=3800
-approved_at=2026-11-11 14:14
-gen_time_s=3.0

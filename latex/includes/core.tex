@@ -1,6 +1,156 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%                            %%
-%% Štruktúra záverečnej práce %%
-%%                            %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Analýza}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Štruktúra práce (kostra). Každý \section je kapitola (nová strana).
+%%  Riadky začínajúce % sú poznámky ČO napísať a z čoho - text píšeš sám.
+%%  Pozn.: opatrenie STU 1/2024 a poznámka v šablóne - odseky vygenerované AI
+%%  do práce nepatria; použitie AI (napr. pri nástrojoch/skriptoch) uveď v
+%%  includes/ai_declaration.tex.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%===============================================================================
+\section{Analýza problematiky}\label{sec:analyza}
+%===============================================================================
+% Cieľ kapitoly: teória + súčasný stav, aby čitateľ rozumel kapitolám 2-5.
+% Rozsah orientačne 15-20 strán. Každé tvrdenie s citáciou.
+
+\subsection{Legacy systémy a ich testovanie}\label{sec:legacy}
+% - definícia legacy kódu (Feathers: "kód bez testov"), prečo je zmena riziková
+% - typické vlastnosti: chýbajúca dokumentácia, pevné závislosti, statický stav,
+%   dlhé metódy, priamy prístup k DB/súborom/času
+% - "seams" (švy) a prečo bez nich nejde jednotkový test
+% - charakterizačné testy / golden master: zachytenie súčasného správania
+%   pred refaktoringom (aktuálne správanie = očakávané správanie)
+
+\subsection{Jednotkové testovanie v jazyku Java}\label{sec:unittest}
+% - čo je jednotkový test vs. integračný, AAA vzor
+% - JUnit 5 (Jupiter, parametrizované testy), JUnit 4 (Randoop/EvoSuite)
+% - test doubles: stub, mock, fake; Mockito vrátane mockStatic/mockConstruction
+% - testovanie JDBC kódu: in-memory databáza H2
+
+\subsection{Hodnotenie kvality testov}\label{sec:metriky-testov}
+% - pokrytie riadkov a vetiev (JaCoCo), prečo pokrytie nestačí
+% - mutačné testovanie: mutant, zabitý/prežitý mutant, mutačné skóre (PIT),
+%   vzorec skóre = detegované / (všetky - nevalidné)
+% - problém orákula (test oracle problem): kto rozhodne, čo je správny výsledok
+% - spoľahlivosť testov: flaky testy, závislosť od času/náhody/poradia
+
+\subsection{Testovateľnosť a štrukturálne vlastnosti kódu}\label{sec:testovatelnost}
+% - definícia testovateľnosti
+% - cyklomatická komplexita (McCabe), kognitívna komplexita (SonarSource)
+% - väzby a závislosti (coupling, fan-out), hard-wired závislosti, statický stav
+% - väzba na zadanie: "vplyv štrukturálnych vlastností na testovateľnosť"
+
+\subsection{Klasické nástroje na automatické generovanie testov}\label{sec:klasicke}
+% - náhodné generovanie s regresnými orákulami: Randoop
+% - search-based (genetický algoritmus, kritériá pokrytia): EvoSuite
+% - ich obmedzenia: nečitateľné testy, orákulum = súčasný výstup,
+%   EvoSuite len po bajtkód Java 11 (dôležité pre prípadovú štúdiu)
+
+\subsection{Veľké jazykové modely pre generovanie testov}\label{sec:llm}
+% - LLM v skratke: transformer, tokeny, kontextové okno, teplota, kvantizácia
+% - modely pre kód; lokálny beh (Ollama) vs. cloudové API (súkromie kódu!)
+% - prompt engineering: rola, pravidlá, kontext, few-shot
+% - spätnoväzbová slučka (kompilátor + výsledky testov -> oprava)
+% - súvisiace práce: TestPilot, ChatUniTest, CodaMosa, CoverUp, Meta TestGen-LLM,
+%   prehľadové štúdie o LLM v testovaní - čo merali a čo im chýba
+% - medzera, ktorú práca vypĺňa: legacy kód so zlou testovateľnosťou,
+%   kontrolovaný benchmark + mutačné skóre + lokálne modely
+
+\subsection{Zhrnutie analýzy a výskumné otázky}\label{sec:rq}
+% Sformuluj výskumné otázky (budú sa vracať v kapitole Výsledky):
+% RQ1 Úspešnosť: koľko vygenerovaných testov sa skompiluje a prejde?
+% RQ2 Kvalita: aké pokrytie a mutačné skóre dosahujú LLM v porovnaní
+%     s klasickými nástrojmi a golden masterom?
+% RQ3 Spoľahlivosť: aké stabilné sú výsledky medzi iteráciami (rozptyl)?
+% RQ4 Testovateľnosť: ako štrukturálne vlastnosti triedy ovplyvňujú výsledok?
+% (RQ5 Refaktoring: dokáže AI upraviť kód, aby bol lepšie testovateľný?
+%  - je v abstrakte, experiment ešte NIE JE spravený -> spraviť alebo vyhodiť z abstraktu)
+
+%===============================================================================
+\section{Návrh metodiky}\label{sec:metodika}
+%===============================================================================
+
+\subsection{Benchmark legacy tried}\label{sec:benchmark}
+% - prečo vlastný kontrolovaný benchmark (každá trieda = jedna vlastnosť)
+% - tabuľka B01-B15: trieda | skúmaná vlastnosť | riadky | cyklomatická
+%   komplexita | závislosti   (údaje: zdrojáky v benchmark-core/src/main/java)
+% - core modul kompilovaný pre Java 8 (rovnaký bajtkód pre všetky nástroje),
+%   B09 moderná Java v samostatnom module
+
+\subsection{Porovnávané prístupy}\label{sec:pristupy}
+% B0 bez testov | B1 golden master | B2 Randoop, EvoSuite | B3 naivný prompt |
+% M navrhnutá metodika | ručne písané referenčné testy (horná hranica)
+% Pri každom: čo to je a prečo je v porovnaní.
+
+\subsection{Navrhnutá metodika generovania}\label{sec:metodika-m}
+% - naivný prompt vs. plný prompt (rola, pravidlá, kontext použitých tried)
+% - odstránenie komentárov zo zdrojového kódu (férovosť voči Randoop/EvoSuite)
+% - opravná slučka: max. 3 kolá, ponechá sa najlepšia verzia
+% - obrázok: diagram toku generovanie -> kontrola -> oprava
+
+\subsection{Metriky}\label{sec:metriky}
+% podiel skompilovaných súborov, pass rate, pokrytie riadkov/vetiev,
+% mutačné skóre, čas generovania, počet tokenov; definuj každú presne
+
+\subsection{Návrh experimentu}\label{sec:experiment}
+% 5 iterácií, seed = 41 + iterácia, teplota 0.2, rozpočet 60 s/trieda,
+% Randoop limit 500 testov, kontext 16384 tokenov
+% modely: Qwen3.6-35B-A3B, Qwen3-Coder-30B-A3B, phi4-mini (parametre, kvantizácia)
+% HW a SW: MacBook (CPU, RAM), JDK 25, JaCoCo 0.8.14, PIT 1.25.8 ...
+% (všetko je v results/runs.csv - stĺpce os, cpu_count, ram_gb, java_version)
+
+%===============================================================================
+\section{Implementácia meracieho prostredia}\label{sec:implementacia}
+%===============================================================================
+
+\subsection{Architektúra}\label{sec:architektura}
+% obrázok pipeline: generovanie -> kompilácia -> testy + JaCoCo -> PIT -> CSV -> report
+
+\subsection{Generovanie testov}\label{sec:impl-generovanie}
+% skripty generate_randoop.sh, generate_evosuite.sh, generate_llm.py,
+% approve_golden_master.sh; Ollama, streamovanie, metadáta generovania
+
+\subsection{Meranie}\label{sec:impl-meranie}
+% run_iteration.py: odstraňovanie neskompilovateľných súborov, izolácia
+% tried, ktoré zhodia JVM, PIT s časovým limitom, výstupné CSV, HTML report
+
+\subsection{Reprodukovateľnosť}\label{sec:reprodukovatelnost}
+% generation_meta.txt, verzie nástrojov, seedy, upozornenie na zmiešané nastavenia
+
+\subsection{Prekonané problémy}\label{sec:problemy}
+% EvoSuite na JDK 25 -> JDK 8; Randoop 28 tisíc testov -> limit;
+% nekonečný výstup malého modelu -> limit tokenov; mockStatic(Math) zhodil JVM;
+% opravná slučka zhoršovala výsledok -> ponechanie najlepšej verzie
+
+%===============================================================================
+\section{Výsledky}\label{sec:vysledky}
+%===============================================================================
+% Údaje: legacy-test-benchmark/results/runs.csv, classes.csv, report.html
+% Pri každom čísle priemer ± smerodajná odchýlka z 5 iterácií.
+
+\subsection{Prehľad výsledkov}\label{sec:prehlad}
+% súhrnná tabuľka: prístup | pass rate | pokrytie riadkov | vetiev | mutačné skóre | čas
+
+\subsection{Úspešnosť generovania (RQ1)}\label{sec:rq1}
+\subsection{Pokrytie a mutačné skóre (RQ2)}\label{sec:rq2}
+\subsection{Stabilita medzi iteráciami (RQ3)}\label{sec:rq3}
+\subsection{Vplyv štrukturálnych vlastností (RQ4)}\label{sec:rq4}
+% graf: mutačné skóre po triedach; príklady: InvoiceProcessor (God metóda),
+% CustomerRepository (JDBC) - koľko opravných kôl, prečo zlyhali testy
+\subsection{Prípadová štúdia na reálnom projekte}\label{sec:pripadova}
+% LLM vs. Randoop (EvoSuite nepodporuje novšiu Javu), 3-5 -> 10-15 tried,
+% ručná kontrola vzorky padajúcich testov: chybné očakávanie vs. nájdená chyba
+
+%===============================================================================
+\section{Diskusia}\label{sec:diskusia}
+%===============================================================================
+
+\subsection{Interpretácia výsledkov}\label{sec:interpretacia}
+% kedy sa LLM oplatí, kedy golden master, kedy klasický nástroj
+
+\subsection{Odporúčania pre prax}\label{sec:odporucania}
+% lokálne modely kvôli súkromiu kódu, opravná slučka je nutná, kontrola človekom
+
+\subsection{Hrozby validity}\label{sec:validita}
+% vnútorná (seedy, nedeterminizmus LLM, HW), vonkajšia (malý benchmark,
+% jeden reálny projekt), konštrukčná (mutačné skóre ako proxy kvality),
+% únik dát (modely mohli vidieť podobný kód pri trénovaní)

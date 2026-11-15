@@ -13,13 +13,19 @@ A small, controlled set of Java classes for comparing unit test generators (no t
 | B07 | `StatefulAccount` | Behaviour depends on state and call order |
 | B08 | `ExceptionHeavy` | Edge cases, nulls, checked/unchecked exceptions |
 | B09 | `ModernJavaFeatures` | Records, sealed types, pattern `switch` (Java 21) |
+| B10 | `StaticCounterRegistry` | Static mutable state shared between tests (ids, counters, a closed flag) |
+| B11 | `ShippingPolicy` | Inheritance: abstract base with a template method, two subclasses, overridden hooks |
+| B12 | `IbanValidator` | Complex logic in private methods, reachable only through one public method |
+| B13 | `OrderStatistics` | Collections and generics: object graphs as input, sorting with ties, nulls, defensive copies |
+| B14 | `InvoiceProcessor` | The "God method": 100+ lines that parse, validate, calculate and format in one pass |
+| B15 | `CustomerRepository` | Legacy JDBC DAO: `DriverManager` connection from a system property, hand-mapped `ResultSet`, SQL by string concatenation, `SQLException` wrapped |
 
 Support classes in `benchmark.support` (`PriceRepository`, `AuditSink`, `DatabasePriceRepository`, `AuditLog`) are dependencies of B04/B05. They are not targets themselves and are excluded from mutation testing.
 
 ## Layout
 
 ```
-benchmark-core/     B01-B08, compiled with --release 8
+benchmark-core/     B01-B08 and B10-B14, compiled with --release 8
   src/main/java     classes under test
   src/test/java     hand-written reference suite (human baseline, JUnit 5)
   suites/           put generated suites here, e.g. suites/randoop, suites/evosuite, suites/llm-<model>
@@ -84,6 +90,34 @@ The golden master is in `benchmark-core/suites/golden-master/`. Each class gets 
 - **`StatefulAccount`:** all sequences of 3 operations.
 - **`TimeAndRandom`:** non-deterministic output (coupon codes, dates, timestamps) is *scrubbed* to placeholders. Only the clock branch that is active at test time is exercised.
 - **When to re-approve:** only when you deliberately change the benchmark classes.
+- **B15 (JDBC):** H2 is on the test classpath only. The reference suite and the golden master point `benchmark.jdbc.url` at an in-memory H2 database (`jdbc:h2:mem:...;DB_CLOSE_DELAY=-1`) and create the `CUSTOMER` table themselves. A generated test can do the same, or mock `DriverManager`/`Connection` with Mockito; tools that do neither get a `DataAccessException` from every call.
+- **B10–B14:** `StaticCounterRegistry` is recorded as sequences of four operations from a reset state; `ShippingPolicy` only through its two shipped subclasses (a golden master records existing behaviour, it does not invent subclasses); `InvoiceProcessor` records the whole report text for 5 customer types × 6 countries × 8 line sets × both flags.
+
+## LLM-generated tests
+
+```bash
+# smoke test: one model, one class
+python3 scripts/generate_llm.py --model "Qwen3-Coder:latest" --prompt full --classes NestedRules
+
+# all models x both prompts, iteration 1 (then 2..5 the same way)
+caffeinate -i bash scripts/run_llm.sh 1 1
+caffeinate -i bash scripts/run_llm.sh 2 5
+```
+
+`generate_llm.py` calls a local model through Ollama and writes one `<Class>Test.java` per benchmark class to `benchmark-core/suites/llm-<model>-<prompt>/`. There are two prompt strategies:
+
+- **`naive` (B3):** one request per class, "write JUnit 5 tests for this class" plus its source.
+- **`full` (the methodology):** rules (JUnit 5 and Mockito 5, how to handle hard-wired dependencies, no time- or random-dependent assertions), the class, and the source of the project types it uses. Then a repair loop: the test is compiled and run, and compiler errors or failing tests are sent back to the model, up to 3 rounds.
+
+**Fixed settings:** temperature 0.2, seed = 41 + iteration, context 16,384 tokens, reasoning ("think") off.
+
+**Comments are stripped:** all comments are removed from the source sent to the model, because the benchmark classes carry researcher notes in theirs. Randoop and EvoSuite don't see comments either.
+
+**Recorded per run** (in `generation_meta.txt`, read automatically by `run_iteration.py`): model, family, parameters, quantization, digest, Ollama version, prompt, seed, temperature, tokens in and out, generation time, repair rounds, and the final status per class.
+
+**Kept for the thesis:**
+- `llm_calls.csv`: one row per model call, with its tokens, time, outcome and errors.
+- `_logs/<Class>.md`: the full conversation per class, useful for examples.
 
 ## More iterations of the baselines
 
@@ -163,7 +197,7 @@ Every chart has **SVG** (vector, for the thesis) and **PNG** download buttons. T
 
 ## Notes for the methodology
 
-- The reference suite reaches 100 % line and branch coverage on every class except `TimeAndRandom`. There, only the happy-hour branch active at run time can be covered, which is the point of that class.
+- The reference suite reaches 100 % line and branch coverage on every class except `TimeAndRandom`, `InvoiceProcessor` (98.8 % branch) and `CustomerRepository` (the ignored exception in `close()` is never triggered by H2). There, only the happy-hour branch active at run time can be covered, which is the point of that class.
 - B02 and B03 have similar cyclomatic complexity, so the pair separates the effect of cognitive complexity.
 - B04 and B05 contain identical business logic, so any difference in results comes from testability alone. B05 is also the input for the refactoring experiment ("can the tool/LLM turn B05 into B04?").
 - The classes were written for this benchmark, not taken from textbooks, to reduce the risk that LLMs have seen them during training.

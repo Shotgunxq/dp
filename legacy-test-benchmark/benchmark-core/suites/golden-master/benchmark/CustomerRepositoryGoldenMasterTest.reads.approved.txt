@@ -1,0 +1,22 @@
+[-1] => EXCEPTION java.lang.IllegalArgumentException: id must be positive
+[0] => EXCEPTION java.lang.IllegalArgumentException: id must be positive
+[1] => Customer{1, Zoe, ACTIVE, 1000}
+[3] => Customer{3, Mia, BLOCKED, 9000}
+[5] => Customer{5, Eve, NEW, 0}
+[6] => null
+[999] => null
+[-1] => [Customer{2, Adam, ACTIVE, 5000}, Customer{4, Bob, ACTIVE, 500}, Customer{1, Zoe, ACTIVE, 1000}]
+[0] => [Customer{2, Adam, ACTIVE, 5000}, Customer{4, Bob, ACTIVE, 500}, Customer{1, Zoe, ACTIVE, 1000}]
+[500] => [Customer{2, Adam, ACTIVE, 5000}, Customer{4, Bob, ACTIVE, 500}, Customer{1, Zoe, ACTIVE, 1000}]
+[501] => [Customer{2, Adam, ACTIVE, 5000}, Customer{1, Zoe, ACTIVE, 1000}]
+[1000] => [Customer{2, Adam, ACTIVE, 5000}, Customer{1, Zoe, ACTIVE, 1000}]
+[5000] => [Customer{2, Adam, ACTIVE, 5000}]
+[5001] => []
+[null] => EXCEPTION java.lang.IllegalArgumentException: status required
+[""] => 0
+["ACTIVE"] => 3
+["active"] => 3
+["Blocked"] => 1
+["NEW"] => 1
+["GONE"] => 0
+["x' OR '1'='1"] => 5
