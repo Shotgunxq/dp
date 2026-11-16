@@ -422,8 +422,8 @@ def gen_llm(cfg, model, prompt, seed, args):
 
 # --------------------------------------------------------------------------- measurement
 def parse_reports(rep):
-    res = {"tests": 0, "failed": 0, "errors": 0, "skipped": 0, "messages": [], "by_class": {}}
-    for f in Path(rep).glob("*.xml"):
+    res = {"tests": 0, "failed": 0, "errors": 0, "skipped": 0, "messages": [], "by_class": {}, "cases": []}
+    for f in sorted(Path(rep).glob("*.xml")):
         try:
             root = ET.parse(f).getroot()
         except ET.ParseError:
@@ -434,38 +434,55 @@ def parse_reports(rep):
             bc[0] += 1
             res["tests"] += 1
             fail, err = tc.find("failure"), tc.find("error")
+            status, ftype, msg = "passed", "", ""
             if tc.find("skipped") is not None:
                 res["skipped"] += 1
+                status = "skipped"
             elif fail is not None or err is not None:
+                status = "failed" if fail is not None else "error"
                 res["failed" if fail is not None else "errors"] += 1
                 el = fail if fail is not None else err
-                res["messages"].append(f"{tc.get('name')}: {(el.get('message') or el.get('type') or '')[:300]}")
+                ftype, msg = el.get("type") or "", (el.get("message") or "")[:300]
+                res["messages"].append(f"{tc.get('name')}: {msg or ftype}")
             else:
                 bc[1] += 1
+            res["cases"].append({"test_class": cls, "test_name": tc.get("name", ""), "time_s": tc.get("time", ""),
+                                 "status": status, "failure_type": ftype, "failure_message": msg})
     return res
 
 
 def target_of(test_fq, classes):
-    simple = test_fq.rsplit(".", 1)[-1]
-    best = ""
+    """Class under test of a test class: the longest class name the test class name starts with."""
+    simple, best = test_fq.rsplit(".", 1)[-1], ""
     for fq in classes:
         n = fq.rsplit(".", 1)[-1]
-        if simple.startswith(n) and len(n) > len(best.rsplit(".", 1)[-1] if best else ""):
+        if simple.startswith(n) and len(n) > len(best.rsplit(".", 1)[-1]):
             best = fq
     return best
 
 
-def measure(cfg, suite, meta, iteration):
+def read_meta(f):
+    if not Path(f).exists():
+        return {}
+    return dict(l.split("=", 1) for l in Path(f).read_text(encoding="utf-8").splitlines() if "=" in l)
+
+
+def measure(cfg, suite, meta, iteration, record=False):
+    """Compile + run + coverage + PIT for one suite folder. Everything is stored in raw/<run_id>/;
+    the CSV files and the report are rebuilt from the raw folders afterwards."""
+    suite = Path(suite).resolve()
     tool = meta.get("tool", "?")
     run_id = f"{datetime.now(timezone.utc):%Y%m%dT%H%M%SZ}_{tool}_{iteration}_{os.urandom(3).hex()}"
     raw = cfg.results / "raw" / run_id
     w = raw / "work"
-    shutil.copytree(suite, raw / "suite", ignore=shutil.ignore_patterns("_check", "_work"))
+    shutil.copytree(suite, raw / "suite", ignore=shutil.ignore_patterns("_check", "_work", "*.class", ".DS_Store"))
+    write_meta(raw / "suite", meta)
     w.mkdir(parents=True)
+    (w / "classes.txt").write_text("\n".join(cfg.classes), encoding="utf-8")
     print(f"   measuring {suite.name} -> {raw.relative_to(ROOT)}")
     cp = test_cp(cfg)
     files = [f for f in (raw / "suite").rglob("*.java") if "/_" not in f.as_posix()]
-    total_files, removed = len(files), []
+    removed = []
     classes_out = w / "classes"
     # 1. compile; files with errors are removed until the rest compiles
     for rnd in range(25):
@@ -478,86 +495,84 @@ def measure(cfg, suite, meta, iteration):
                      log=w / f"compile-{rnd}.log")
         if rc == 0:
             break
-        bad = {Path(m) for m in re.findall(r"^(/.*?\.java):\d+: error", out, re.M)}
-        bad &= set(files)
+        bad = {Path(m) for m in re.findall(r"^(/.*?\.java):\d+: error", out, re.M)} & set(files)
         if not bad:
             removed += files
             files = []
             break
         removed += sorted(bad)
         files = [f for f in files if f not in bad]
+    (raw / "removed_files.txt").write_text("\n".join(str(f.relative_to(raw / "suite")) for f in removed), encoding="utf-8")
     tests = sorted(str(p.relative_to(classes_out))[:-6].replace("/", ".") for p in classes_out.rglob("*.class")
                    if "$" not in p.name)
-    tests = [t for t in tests if re.search(r"(Test\d*|_ESTest)$", t)]
-    row = {"run_id": run_id, "timestamp_utc": f"{datetime.now(timezone.utc):%Y-%m-%dT%H:%M:%SZ}",
-           "project": cfg.name, "tool": tool, "model": meta.get("model", ""),
-           "prompt_version": meta.get("prompt_version", ""), "iteration": iteration, "seed": meta.get("seed", ""),
-           "budget_s": meta.get("budget_s", ""), "gen_time_s": meta.get("gen_time_s", ""),
-           "tokens_in": meta.get("tokens_in", ""), "tokens_out": meta.get("tokens_out", ""),
-           "classes": len(cfg.classes), "test_files_total": total_files, "test_files_compiled": len(files),
-           "tests": 0, "tests_passed": 0, "pass_rate": "", "line_cov": "", "branch_cov": "",
-           "mutants": 0, "mutants_detected": 0, "mutation_score": "", "pit_status": "not_run", "status": ""}
-    per_class = {fq: {"tests": 0, "passed": 0} for fq in cfg.classes}
+    tests = [t for t in tests if re.search(r"(Test\d*|Tests|_ESTest)$", t)]
     agent = lib_jars("agent")[0]
     includes = ":".join(f"{fq}:{fq}$*" for fq in cfg.classes)
     exec_file = w / "jacoco.exec"
 
-    def run_tests(selected, timeout, rep):
+    def copy_resources():   # e.g. golden-master *.approved.txt, read from the test classpath
+        for f in (raw / "suite").rglob("*"):
+            rel = f.relative_to(raw / "suite")
+            if f.is_file() and f.suffix != ".java" and not any(p.startswith("_") for p in rel.parts) \
+                    and f.name != "generation_meta.txt":
+                (classes_out / rel).parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(f, classes_out / rel)
+
+    def run_tests(selected, timeout, rep, extra=(), log="tests.log", coverage=True):
         exec_file.unlink(missing_ok=True)
         shutil.rmtree(rep, ignore_errors=True)
-        return sh([cfg.java, f"-javaagent:{agent}=destfile={exec_file},includes={includes}"] + jvm_flags(cfg)
+        jvm = [f"-javaagent:{agent}=destfile={exec_file},includes={includes}"] if coverage else []
+        return sh([cfg.java] + jvm + jvm_flags(cfg) + list(extra)
                   + ["-cp", os.pathsep.join([str(classes_out)] + cp), "org.junit.platform.console.ConsoleLauncher",
                      "execute", "--disable-banner", "--disable-ansi-colors", "--details=none", f"--reports-dir={rep}"]
-                  + [f"--select-class={t}" for t in selected], cwd=w, timeout=timeout, log=w / "tests.log")
+                  + [f"--select-class={t}" for t in selected], cwd=w, timeout=timeout, log=w / log)
+
+    if tests and record:
+        # golden master: write the CURRENT behaviour to *.approved.txt (into the copy and the original suite)
+        print("   recording the golden master (approve mode) ...")
+        run_tests(tests, cfg.test_timeout, w / "record", coverage=False, log="record.log",
+                  extra=["-Dgolden.approve=true", f"-Dgolden.dir={raw / 'suite'}"])
+        n = 0
+        for f in (raw / "suite").rglob("*.approved.txt"):
+            target = suite / f.relative_to(raw / "suite")
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(f, target)
+            n += 1
+        print(f"   {n} approved file(s) written")
+    copy_resources()
 
     # 2. run with coverage; a suite that hangs is split class by class and the hanging classes dropped
+    passed = 0
     if tests:
-        rc, out = run_tests(tests, cfg.test_timeout, w / "reports")
+        rc, _ = run_tests(tests, cfg.test_timeout, w / "reports")
         if rc is None:
             print("   !! the test run timed out - checking test classes one by one")
             keep = []
             for t in tests:
                 r1, _ = run_tests([t], 300, w / "single")
-                (keep.append(t) if r1 is not None else print(f"      dropped (hangs): {t}"))
+                if r1 is not None:
+                    keep.append(t)
+                else:
+                    print(f"      dropped (hangs): {t}")
             tests = keep
-            rc, out = run_tests(tests, cfg.test_timeout, w / "reports") if tests else (0, "")
+            shutil.rmtree(w / "single", ignore_errors=True)
+            if tests:
+                run_tests(tests, cfg.test_timeout, w / "reports")
         res = parse_reports(w / "reports")
-        row.update(tests=res["tests"], tests_passed=res["tests"] - res["failed"] - res["errors"] - res["skipped"])
-        row["pass_rate"] = round(row["tests_passed"] / res["tests"], 4) if res["tests"] else ""
-        for cls, (n, ok) in res["by_class"].items():
-            tgt = target_of(cls, cfg.classes)
-            if tgt:
-                per_class[tgt]["tests"] += n
-                per_class[tgt]["passed"] += ok
+        passed = res["tests"] - res["failed"] - res["errors"] - res["skipped"]
+    (w / "test_classes.txt").write_text("\n".join(tests), encoding="utf-8")
     # 3. coverage of the classes under test only
-    cov = {fq: {} for fq in cfg.classes}
     if exec_file.exists():
         classfiles = []
         for fq in cfg.classes:
             cf = class_file(cfg, fq)
-            classfiles += ["--classfiles", str(cf)]
-            for inner in cf.parent.glob(cf.stem + "$*.class"):
-                classfiles += ["--classfiles", str(inner)]
+            for f in [cf] + sorted(cf.parent.glob(cf.stem + "$*.class")):
+                classfiles += ["--classfiles", str(f)]
         sh([cfg.java, "-jar", lib_jars("cli")[0], "report", str(exec_file), *classfiles,
             "--sourcefiles", str(cfg.sources), "--csv", str(w / "jacoco.csv"), "--html", str(w / "jacoco-html")],
            log=w / "jacoco.log")
-        if (w / "jacoco.csv").exists():
-            for r in csv.DictReader(open(w / "jacoco.csv", encoding="utf-8")):
-                fq = f"{r['PACKAGE']}.{r['CLASS'].split('.')[0]}" if r["PACKAGE"] else r["CLASS"].split(".")[0]
-                if fq in cov:
-                    for k in ("LINE_MISSED", "LINE_COVERED", "BRANCH_MISSED", "BRANCH_COVERED"):
-                        cov[fq][k] = cov[fq].get(k, 0) + int(r[k])
-    lc = sum(c.get("LINE_COVERED", 0) for c in cov.values())
-    lt = lc + sum(c.get("LINE_MISSED", 0) for c in cov.values())
-    bc = sum(c.get("BRANCH_COVERED", 0) for c in cov.values())
-    bt = bc + sum(c.get("BRANCH_MISSED", 0) for c in cov.values())
-    if not lt:  # nothing ran: every line counts as missed
-        lt = None
-    row["line_cov"] = round(lc / lt, 4) if lt else 0.0
-    row["branch_cov"] = round(bc / bt, 4) if bt else ""
     # 4. mutation testing (only when at least one test passes)
-    mut = {fq: [0, 0] for fq in cfg.classes}
-    if row["tests_passed"]:
+    if passed:
         targets = ",".join(f"{fq},{fq}$*" for fq in cfg.classes)
         threads = max(1, (os.cpu_count() or 4) - 1)
         flags = jvm_flags(cfg)
@@ -572,34 +587,10 @@ def measure(cfg, suite, meta, iteration):
         rc, out = sh(cmd, cwd=w, timeout=cfg.pit_timeout * 60, log=w / "pit.log")
         if rc not in (0, None) and "skipFailingTests" in out:   # older PIT command line without this option
             cmd.remove("--skipFailingTests=true")
-            rc, out = sh(cmd, cwd=w, timeout=cfg.pit_timeout * 60, log=w / "pit.log")
-        mfile = w / "pit" / "mutations.csv"
-        row["pit_status"] = "timeout" if rc is None else ("ok" if mfile.exists() else "failed")
-        if mfile.exists():
-            for r in csv.reader(open(mfile, encoding="utf-8")):
-                if len(r) < 6 or r[5] == "NON_VIABLE":
-                    continue
-                fq = r[1].split("$")[0]
-                if fq in mut:
-                    mut[fq][0] += 1
-                    mut[fq][1] += r[5] in ("KILLED", "TIMED_OUT", "MEMORY_ERROR", "RUN_ERROR")
-    row["mutants"] = sum(m[0] for m in mut.values())
-    row["mutants_detected"] = sum(m[1] for m in mut.values())
-    row["mutation_score"] = round(row["mutants_detected"] / row["mutants"], 4) if row["mutants"] else (0.0 if row["pit_status"] == "not_run" else "")
-    row["status"] = "ok" if tests else "no_runnable_tests"
-    (raw / "removed_files.txt").write_text("\n".join(str(f.relative_to(raw / "suite")) for f in removed), encoding="utf-8")
-    append_csv(cfg.results / "runs.csv", row)
-    for fq in cfg.classes:
-        c, m = cov[fq], mut[fq]
-        lt_c = c.get("LINE_COVERED", 0) + c.get("LINE_MISSED", 0)
-        bt_c = c.get("BRANCH_COVERED", 0) + c.get("BRANCH_MISSED", 0)
-        append_csv(cfg.results / "classes.csv", {
-            "run_id": run_id, "tool": tool, "model": row["model"], "prompt_version": row["prompt_version"],
-            "iteration": iteration, "class": fq, "tests": per_class[fq]["tests"], "tests_passed": per_class[fq]["passed"],
-            "line_cov": round(c.get("LINE_COVERED", 0) / lt_c, 4) if lt_c else 0.0,
-            "branch_cov": round(c.get("BRANCH_COVERED", 0) / bt_c, 4) if bt_c else "",
-            "mutants": m[0], "mutation_score": round(m[1] / m[0], 4) if m[0] else ""})
-    print(f"   => tests {row['tests_passed']}/{row['tests']} passed | line {pct(row['line_cov'])} | "
+            sh(cmd, cwd=w, timeout=cfg.pit_timeout * 60, log=w / "pit.log")
+    row = collect_run(cfg, raw)[0]
+    print(f"   => files compiled {row['test_files_compiled']}/{row['test_files_total']} | tests "
+          f"{row['tests_passed']}/{row['tests']} passed | line {pct(row['line_cov'])} | "
           f"branch {pct(row['branch_cov'])} | mutation {pct(row['mutation_score'])} ({row['pit_status']})")
     return row
 
@@ -608,19 +599,157 @@ def pct(v):
     return f"{float(v) * 100:.1f}%" if v not in ("", None) else "-"
 
 
-def append_csv(path, row):
-    path.parent.mkdir(parents=True, exist_ok=True)
-    new = not path.exists()
-    if not new:
-        with open(path, encoding="utf-8") as f:
-            header = next(csv.reader(f), [])
-        if header != list(row):
-            row = {k: row.get(k, "") for k in header} if set(row) <= set(header) else row
-    with open(path, "a", newline="", encoding="utf-8") as f:
-        wr = csv.DictWriter(f, fieldnames=list(row))
-        if new:
+def ratio(a, b):
+    return round(a / b, 4) if b else ""
+
+
+# --------------------------------------------------------------------------- CSV files + report (from raw/)
+RUN_FIELDS = ["run_id", "timestamp_utc", "tool", "model", "prompt_version", "iteration", "seed", "budget_s",
+              "module", "notes", "gen_time_s", "tokens_in", "tokens_out", "extra_meta",
+              "test_files_total", "test_files_compiled", "test_files_removed",
+              "tests", "tests_passed", "tests_failed", "tests_errors", "tests_skipped", "pass_rate",
+              "line_covered", "line_total", "line_cov", "branch_covered", "branch_total", "branch_cov",
+              "instruction_cov", "mutants", "mutants_detected", "mutants_killed", "mutants_survived",
+              "mutants_no_coverage", "mutants_timed_out", "mutation_score", "test_strength", "pit_status", "status"]
+CLASS_FIELDS = ["run_id", "tool", "model", "prompt_version", "iteration", "class", "simple_name", "package",
+                "is_support", "line_cov", "branch_cov", "instruction_cov", "cyclomatic_complexity",
+                "tests", "tests_passed", "pass_rate", "mutants", "mutants_detected", "mutation_score",
+                "test_strength"]
+TEST_FIELDS = ["run_id", "tool", "iteration", "subject_class", "test_class", "test_name", "time_s", "status",
+               "failure_type", "failure_message"]
+MUTANT_FIELDS = ["run_id", "tool", "iteration", "class", "method", "line", "mutator", "status", "killing_test"]
+DETECTED = ("KILLED", "TIMED_OUT", "MEMORY_ERROR", "RUN_ERROR")
+MAIN_META = ("tool", "model", "prompt_version", "seed", "budget_s", "gen_time_s", "tokens_in", "tokens_out", "notes")
+
+
+def collect_run(cfg, raw):
+    """All rows of one run, read from its raw folder."""
+    m = re.match(r"(\d{4})(\d\d)(\d\d)T(\d\d)(\d\d)(\d\d)Z_(.+)_(\d+)_[0-9a-f]+$", raw.name)
+    if not m:
+        return None
+    w, meta = raw / "work", read_meta(raw / "suite" / "generation_meta.txt")
+    tool, iteration = meta.get("tool", m.group(7)), int(m.group(8))
+    classes = (w / "classes.txt").read_text(encoding="utf-8").split() if (w / "classes.txt").exists() else cfg.classes
+    base = {"run_id": raw.name, "tool": tool, "iteration": iteration}
+    total = len([f for f in (raw / "suite").rglob("*.java") if "/_" not in f.as_posix()])
+    rem = raw / "removed_files.txt"
+    removed = len([l for l in rem.read_text(encoding="utf-8").splitlines() if l.strip()]) if rem.exists() else 0
+    # tests
+    res = parse_reports(w / "reports")
+    per = {fq: {"tests": 0, "passed": 0} for fq in classes}
+    test_rows = []
+    for c in res["cases"]:
+        tgt = target_of(c["test_class"], classes)
+        if tgt:
+            per[tgt]["tests"] += 1
+            per[tgt]["passed"] += c["status"] == "passed"
+        test_rows.append(dict(base, subject_class=tgt.rsplit(".", 1)[-1] if tgt else "", **c))
+    passed = res["tests"] - res["failed"] - res["errors"] - res["skipped"]
+    # coverage
+    cov = {fq: {} for fq in classes}
+    if (w / "jacoco.csv").exists():
+        with open(w / "jacoco.csv", encoding="utf-8") as f:
+            for r in csv.DictReader(f):
+                outer = r["CLASS"].split(".")[0]
+                fq = f"{r['PACKAGE']}.{outer}" if r["PACKAGE"] else outer
+                if fq in cov:
+                    for k, v in r.items():
+                        if k.endswith(("_MISSED", "_COVERED")):
+                            cov[fq][k] = cov[fq].get(k, 0) + int(v)
+
+    def cv(c, kind):
+        return c.get(f"{kind}_COVERED", 0), c.get(f"{kind}_COVERED", 0) + c.get(f"{kind}_MISSED", 0)
+
+    # mutants
+    mut = {fq: {} for fq in classes}
+    mutant_rows = []
+    mfile = w / "pit" / "mutations.csv"
+    if mfile.exists():
+        with open(mfile, encoding="utf-8") as f:
+            for r in csv.reader(f):
+                if len(r) < 6 or r[5] == "NON_VIABLE":
+                    continue
+                fq = r[1].split("$")[0]
+                if fq in mut:
+                    mut[fq][r[5]] = mut[fq].get(r[5], 0) + 1
+                    mutant_rows.append(dict(base, **{"class": r[1], "method": r[3], "line": r[4],
+                                                      "mutator": r[2].rsplit(".", 1)[-1], "status": r[5],
+                                                      "killing_test": r[6] if len(r) > 6 else ""}))
+    if mfile.exists():
+        pit_status = "ok"
+    elif (w / "pit.log").exists():
+        pit_status = "timeout" if "!! TIMEOUT" in (w / "pit.log").read_text(encoding="utf-8", errors="replace") else "failed"
+    else:
+        pit_status = "not_run"
+
+    def ms(d):   # (mutants, detected, mutation score, test strength)
+        n, det = sum(d.values()), sum(d.get(s, 0) for s in DETECTED)
+        if pit_status != "ok":   # no tests passed -> nothing detected; PIT broke -> unknown
+            return n, det, (0.0 if pit_status == "not_run" else ""), ""
+        return n, det, ratio(det, n), ratio(det, n - d.get("NO_COVERAGE", 0))
+
+    class_rows = []
+    for fq in classes:
+        c, p = cov[fq], per[fq]
+        (lc, lt), (bc, bt), (ic, it) = cv(c, "LINE"), cv(c, "BRANCH"), cv(c, "INSTRUCTION")
+        n, det, score, strength = ms(mut[fq])
+        class_rows.append(dict(base, model=meta.get("model", ""), prompt_version=meta.get("prompt_version", ""),
+                               **{"class": fq}, simple_name=fq.rsplit(".", 1)[-1], package=fq.rsplit(".", 1)[0],
+                               is_support="False", line_cov=ratio(lc, lt) if lt else 0.0,
+                               branch_cov=ratio(bc, bt) if bt else ("" if lt else 0.0),
+                               instruction_cov=ratio(ic, it) if it else 0.0,
+                               cyclomatic_complexity=cv(c, "COMPLEXITY")[1] or "",
+                               tests=p["tests"], tests_passed=p["passed"], pass_rate=ratio(p["passed"], p["tests"]),
+                               mutants=n, mutants_detected=det, mutation_score=score, test_strength=strength))
+    tot = {}
+    for c in cov.values():
+        for k, v in c.items():
+            tot[k] = tot.get(k, 0) + v
+    allm = {}
+    for d in mut.values():
+        for k, v in d.items():
+            allm[k] = allm.get(k, 0) + v
+    (lc, lt), (bc, bt), (ic, it) = cv(tot, "LINE"), cv(tot, "BRANCH"), cv(tot, "INSTRUCTION")
+    n, det, score, strength = ms(allm)
+    run = dict(base, timestamp_utc="{}-{}-{}T{}:{}:{}Z".format(*m.groups()[:6]), model=meta.get("model", ""),
+               prompt_version=meta.get("prompt_version", ""), seed=meta.get("seed", ""),
+               budget_s=meta.get("budget_s", ""), module=cfg.name, notes=meta.get("notes", ""),
+               gen_time_s=meta.get("gen_time_s", ""), tokens_in=meta.get("tokens_in", ""),
+               tokens_out=meta.get("tokens_out", ""),
+               extra_meta=json.dumps({k: v for k, v in sorted(meta.items()) if k not in MAIN_META}),
+               test_files_total=total, test_files_compiled=total - removed, test_files_removed=removed,
+               tests=res["tests"], tests_passed=passed, tests_failed=res["failed"], tests_errors=res["errors"],
+               tests_skipped=res["skipped"], pass_rate=ratio(passed, res["tests"]),
+               line_covered=lc, line_total=lt, line_cov=ratio(lc, lt) if lt else 0.0,
+               branch_covered=bc, branch_total=bt, branch_cov=ratio(bc, bt) if bt else ("" if lt else 0.0),
+               instruction_cov=ratio(ic, it) if it else 0.0,
+               mutants=n, mutants_detected=det, mutants_killed=allm.get("KILLED", 0),
+               mutants_survived=allm.get("SURVIVED", 0), mutants_no_coverage=allm.get("NO_COVERAGE", 0),
+               mutants_timed_out=allm.get("TIMED_OUT", 0), mutation_score=score, test_strength=strength,
+               pit_status=pit_status, status="ok" if res["tests"] else "no_runnable_tests")
+    return run, class_rows, test_rows, mutant_rows
+
+
+def rebuild(cfg, report=True):
+    """Rewrite runs/classes/tests/mutants.csv from all raw/ folders and build report.html."""
+    runs, classes, tests, mutants = [], [], [], []
+    for raw in sorted((cfg.results / "raw").glob("*")) if (cfg.results / "raw").exists() else []:
+        got = collect_run(cfg, raw) if raw.is_dir() else None
+        if got:
+            runs.append(got[0])
+            classes += got[1]
+            tests += got[2]
+            mutants += got[3]
+    for name, fields, rows in (("runs.csv", RUN_FIELDS, runs), ("classes.csv", CLASS_FIELDS, classes),
+                               ("tests.csv", TEST_FIELDS, tests), ("mutants.csv", MUTANT_FIELDS, mutants)):
+        with open(cfg.results / name, "w", newline="", encoding="utf-8") as f:
+            wr = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore")
             wr.writeheader()
-        wr.writerow(row)
+            wr.writerows(rows)
+    if report and runs:
+        rc, out = sh([sys.executable, str(ROOT / "scripts" / "make_report.py"), "--results", str(cfg.results)])
+        print(f"   report: open {cfg.results / 'report.html'}" if rc == 0 else f"!! report failed:\n{out[-1500:]}")
+    return runs
 
 
 # --------------------------------------------------------------------------- commands
@@ -639,9 +768,8 @@ def one_run(cfg, args, tool, iteration, model=None, prompt=None):
         return False
     if d is None:
         return False
-    meta = dict(l.split("=", 1) for l in (d / "generation_meta.txt").read_text(encoding="utf-8").splitlines() if "=" in l)
     try:
-        measure(cfg, d, meta, iteration)
+        measure(cfg, d, read_meta(d / "generation_meta.txt"), iteration)
         return True
     except Exception as e:  # one broken run must not stop the night
         print(f"!! measurement failed: {e!r}")
@@ -652,6 +780,25 @@ def cmd_run(cfg, args):
     if args.tool == "llm" and not (args.model and args.prompt):
         sys.exit("!! --tool llm needs --model and --prompt")
     one_run(cfg, args, args.tool, args.iteration, args.model, args.prompt)
+    cmd_summary(cfg, args)
+
+
+def cmd_measure(cfg, args):
+    """Measure a suite that already exists (hand-written tests, golden master written by Bob, ...)."""
+    suite = Path(os.path.expanduser(args.suite)).resolve()
+    if not suite.is_dir() or not list(suite.rglob("*.java")):
+        sys.exit(f"!! no .java test files under {suite}")
+    top = sorted({f.relative_to(suite).parts[0] for f in suite.rglob("*.java")})
+    pkgs = sorted({fq.split(".")[0] for fq in cfg.classes})
+    if not set(top) & set(pkgs):
+        print(f"   !! {suite} should be the package ROOT (containing {'/, '.join(pkgs)}/), but it contains: {', '.join(top)}")
+    meta = read_meta(suite / "generation_meta.txt")
+    meta.update({"tool": args.tool})
+    for k in ("model", "notes"):
+        if getattr(args, k):
+            meta[k] = getattr(args, k)
+    print(f"\n######## {args.tool} {meta.get('model', '')} | iteration {args.iteration} | {datetime.now():%H:%M}")
+    measure(cfg, suite, meta, args.iteration, record=args.record)
     cmd_summary(cfg, args)
 
 
@@ -673,27 +820,27 @@ def cmd_all(cfg, args):
 
 
 def cmd_summary(cfg, args):
-    f = cfg.results / "runs.csv"
-    if not f.exists():
+    """Rebuilds the CSV files + report.html from raw/ and prints the table."""
+    runs = rebuild(cfg)
+    if not runs:
         print("no results yet")
         return
     groups = {}
-    for r in csv.DictReader(open(f, encoding="utf-8")):
-        key = (r["tool"], r["model"].split("/")[-1], r["prompt_version"])
-        groups.setdefault(key, []).append(r)
+    for r in runs:
+        groups.setdefault((r["tool"], r["model"].split("/")[-1], r["prompt_version"]), []).append(r)
 
     def mean(rows, k):
         v = [float(r[k]) for r in rows if r.get(k) not in ("", None)]
         return sum(v) / len(v) if v else None
 
-    print(f"\n== Results '{cfg.name}' ({f.relative_to(ROOT)})")
-    print(f"   {'tool':9} {'model':32} {'prompt':7} {'runs':>4} {'pass':>7} {'line':>7} {'branch':>7} {'mutation':>9}")
+    print(f"\n== Results '{cfg.name}' ({(cfg.results / 'runs.csv').relative_to(ROOT)})")
+    print(f"   {'tool':14} {'model':30} {'prompt':7} {'runs':>4} {'compiled':>9} {'pass':>7} {'line':>7} {'branch':>7} {'mutation':>9}")
     for (tool, model, prompt), rows in sorted(groups.items()):
+        comp = sum(r["test_files_compiled"] for r in rows), sum(r["test_files_total"] for r in rows)
         cells = [mean(rows, k) for k in ("pass_rate", "line_cov", "branch_cov", "mutation_score")]
-        print(f"   {tool:9} {model[:32]:32} {prompt:7} {len(rows):4} " + " ".join(
+        print(f"   {tool:14} {model[:30]:30} {prompt:7} {len(rows):4} {f'{comp[0]}/{comp[1]}':>9} " + " ".join(
             f"{c * 100:6.1f}%" if c is not None else "      -" for c in cells[:3]) + (
             f" {cells[3] * 100:8.1f}%" if cells[3] is not None else "        -"))
-    print(f"   per class: {(cfg.results / 'classes.csv').relative_to(ROOT)}")
 
 
 def main():
@@ -711,10 +858,20 @@ def main():
     r.add_argument("--model")
     r.add_argument("--prompt", choices=["naive", "full"])
     r.add_argument("--iteration", type=int, default=1)
-    sub.add_parser("summary")
+    m = sub.add_parser("measure", help="measure an existing suite folder (golden master, hand-written tests)")
+    m.add_argument("--suite", required=True, help="package root of the tests (the folder that contains e.g. otms/...)")
+    m.add_argument("--tool", default="golden-master", help="name in the report: golden-master, reference, ...")
+    m.add_argument("--model", default="", help="who wrote it, e.g. bob")
+    m.add_argument("--notes", default="")
+    m.add_argument("--iteration", type=int, default=1)
+    m.add_argument("--record", action="store_true",
+                   help="golden master with the GoldenMaster.java helper: record *.approved.txt from the current code first")
+    sub.add_parser("summary", help="rebuild the CSV files and report.html from raw/, print the table")
+    sub.add_parser("report", help="same as summary")
     args = ap.parse_args()
     cfg = Cfg(Path(args.config))
-    {"setup": cmd_setup, "all": cmd_all, "run": cmd_run, "summary": cmd_summary}[args.cmd](cfg, args)
+    {"setup": cmd_setup, "all": cmd_all, "run": cmd_run, "measure": cmd_measure, "summary": cmd_summary,
+     "report": cmd_summary}[args.cmd](cfg, args)
 
 
 if __name__ == "__main__":
